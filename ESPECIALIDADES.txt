@@ -1,0 +1,51 @@
+Alergia e Imunologia
+Angiologia
+Cardiologia
+Cirurgia Cardiovascular
+Cirurgia de Cabeça e Pescoço
+Cirurgia Geral
+Cirurgia Pediátrica
+Cirurgia Plástica
+Cirurgia Torácica
+Cirurgia Vascular
+Clínica Médica
+Dermatologia
+Endocrinologia e Metabologia
+Endoscopia
+Gastroenterologia
+Geriatria
+Ginecologia e Obstetrícia
+Hematologia e Hemoterapia
+Homeopatia
+Infectologia
+Mastologia
+Nefrologia
+Neurocirurgia
+Neurologia
+Nutrologia
+Oftalmologia
+Ortopedia e Traumatologia
+Otorrinolaringologia
+Patologia
+Pediatria
+Pneumologia
+Psiquiatria
+Radiologia e Diagnóstico por Imagem
+Reumatologia
+Urologia
+Densitometria Óssea
+Ecocardiografia
+Ecografia Vascular com Doppler
+Endocrinologia Pediátrica
+Endoscopia Digestiva
+Gastroenterologia Pediátrica
+Hepatologia
+Infectologia Pediátrica
+Mamografia
+Nefrologia Pediátrica
+Neurologia Pediátrica
+Nutrologia Pediátrica
+Pneumologia Pediátrica
+Psicoterapia
+Reumatologia Pediátrica
+Ultrassonografia

@@ -1,0 +1,39 @@
+.tabela-pacientes{
+	margin-top: 2rem;
+	width: auto;
+	margin-bottom : .5em;
+	table-layout: fixed;
+	margin-left: 1rem;
+	margin-right: 1rem;
+
+}
+.linha-cabecalho{
+	font-weight: bold;
+	background-color: darkblue;
+	
+}
+.celula{
+	padding: 0.4rem;
+	border:1px solid black;
+	padding-top: 1rem ;
+	font-family: "raleway",Cambria,sans-serif;
+	color:white;
+}
+
+.celula-pequena{
+	width:8rem;
+}
+
+.celula-grande{
+	width:23rem;
+}
+
+.tr-conteudo{
+	text-align: center;
+	border:1px solid black;
+}
+.td-conteudo{
+	padding: 6px;
+	border:1px solid black;
+}
+
