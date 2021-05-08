@@ -13,10 +13,10 @@ class PacienteController {
         this._pacientes = new Pacientes();
     }
 
-    adiciona(event){
-        event.preventDefault();
+    adiciona(){
+        //event.preventDefault();
         this._pacientes.adiciona(this._criarPaciente());
-        this._limparFormulario();
+        //this._limparFormulario();
         console.log(this._pacientes.paraArray())
     }
 
@@ -37,6 +37,6 @@ class PacienteController {
         this._inputNascimento.value = '';
         this._inputTelefone.value = '';
         this._inputCelular.value = '';
-        this._inputObservacao.value= 'SEM AGENDA'
+        this._inputObservacao.value= 'SEM AGENDA TESTE'
     }
 }

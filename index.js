@@ -22,16 +22,16 @@ app.get('/', function(req, res){
     res.render('index')
 })
 
-app.post('/criado', (req,res)=>{
+app.post('/enviado', (req,res)=>{
     criarPaciente.create({
-        Atendente: req.body.atendente,
-        Matricula: req.body.matricula,
-        Nome: req.body.nome,
-        Nascimento: req.body.nascimento,
-        Telefone: req.body.telefone,
-        Celular: req.body.celular,
-        Especialidade: req.body.especialidade,
-        Observacao: req.body.observacao
+      Observacao: req.body.observacao,
+      Nome: req.body.nome,
+      Atendente: req.body.atendente,
+      Matricula: req.body.matricula,
+      Nascimento: req.body.nascimento,
+      Telefone: req.body.telefone,
+      Celular: req.body.celular,
+      Especialidade: req.body.especialidade
     }).then(()=>{
         res.redirect('/')
     }).catch(erro=>{
