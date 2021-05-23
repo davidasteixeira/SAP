@@ -37,21 +37,6 @@ label{
 	margin-bottom: .2em;
 }
 
-.botao{
-	padding: .0.5rem;
-	border: 0;
-	border-bottom: 3px solid #04324c;
-	font-size: 1.2rem;
-	cursor: pointer;
-	color: #fff;
-	background-color:darkblue;
-	display: block;
-	clear: both;
-	margin: 0.5rem;
-	width: 12rem;
-
-}
-
 .campo-situacao{
 	width: 100%;
 	margin-top: 3rem;

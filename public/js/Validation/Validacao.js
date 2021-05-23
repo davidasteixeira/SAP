@@ -2,7 +2,18 @@ function criarLegenda(alvo,estilo){
     let legenda = document.querySelector(`.alerta-${alvo}`)
     legenda.style.display = estilo;
 }
-let botaoSubmit = document.querySelector("#adicionar-paciente").disable = true;
+function CancelarEnvio(){
+    const botao = document.querySelector("#adicionar-paciente");
+    botao.onclick = ()=>{
+        return false;
+    }
+}
+function AtivarEnvio(){
+    const botao = document.querySelector("#adicionar-paciente");
+    botao.onclick = ()=>{
+        return true;
+    }
+}
 
 function validarAtendente(atendente, valor){
     if(!/(^[A-Za-z]{3,}$)/.test(valor) && valor.length>0){
@@ -18,12 +29,14 @@ function validarMatricula(matricula, valor) {
     if(/^[0-9]{6}\-[0-9]$/.test(valor) || valor.length==0){
         matricula.classList.remove("erro");
         criarLegenda("matricula","none");
+        AtivarEnvio();
     }else if(/\d{7}/.test(valor)){
        matricula.value = DadosConverter.paraMatricula(valor)
     }
     else{
         matricula.classList.add("erro");
         criarLegenda("matricula","block");
+        CancelarEnvio();
     }
 }
 
