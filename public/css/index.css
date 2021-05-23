@@ -67,3 +67,8 @@ label{
     color: red;
     font-weight: bold;
 }
+
+.botao-desativado{
+	background: lightgray;
+	border-bottom: none;
+}

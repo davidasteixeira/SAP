@@ -7,21 +7,25 @@ function CancelarEnvio(){
     botao.onclick = ()=>{
         return false;
     }
+    botao.classList.add("botao-desativado");
 }
 function AtivarEnvio(){
     const botao = document.querySelector("#adicionar-paciente");
     botao.onclick = ()=>{
         return true;
     }
+    botao.classList.remove("botao-desativado");
 }
 
 function validarAtendente(atendente, valor){
     if(!/(^[A-Za-z]{3,}$)/.test(valor) && valor.length>0){
         atendente.classList.add("erro");
         criarLegenda("atendente","block");
+        CancelarEnvio();
     }else{
         atendente.classList.remove("erro");
         criarLegenda("atendente","none");
+        AtivarEnvio();
     }
 }
 
@@ -44,9 +48,11 @@ function validarNome(nome, valor){
     if(!/(^[A-Za-z]{1,}\s*)([A-Za-z]+\s?)*/.test(valor) && valor.length>0){
         nome.classList.add("erro");
         criarLegenda("nome","block");
+        CancelarEnvio();
     }else{
         nome.classList.remove("erro");
         criarLegenda("nome","none");
+        AtivarEnvio();
     }
 }
 
@@ -54,9 +60,11 @@ function validarData(data,valor){
     if(!/(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/(19|20)\d{2}/.test(valor) && valor.length>0){
         data.classList.add("erro");
         criarLegenda("nascimento","block");
+        CancelarEnvio();
     }else{
         data.classList.remove("erro");
         criarLegenda("nascimento","none");
+        AtivarEnvio();
     }
 }
 
@@ -66,13 +74,16 @@ function validarTelefone(telefone,valor) {
         telefone.value = DadosConverter.paraTel(valor)
         telefone.classList.remove("erro");
         criarLegenda("telefone","none");
+        AtivarEnvio();
     }
     else if (!/^\d{2}-\d{4}-\d{4}$/.test(valor) && valor.length>0){
         telefone.classList.add("erro");
         criarLegenda("telefone","block");
+        CancelarEnvio();
     }else {
         telefone.classList.remove("erro");
         criarLegenda("telefone","none");
+        AtivarEnvio();
     }
 }
 
@@ -81,12 +92,15 @@ function validarCelular(celular,valor) {
         celular.value = DadosConverter.paraCel(valor);
         celular.classList.remove("erro");
         criarLegenda("celular","none");
+        AtivarEnvio();
     }
     else if (!/^\d{2}\-\9\d{4}\-\d{4}$/.test(valor) && valor.length>0){
         celular.classList.add("erro");
         criarLegenda("celular","block");
+        CancelarEnvio();
     }else{
         celular.classList.remove("erro");
         criarLegenda("celular","none");
+        AtivarEnvio();
     }
 }
