@@ -2,6 +2,7 @@ function criarLegenda(alvo,estilo){
     let legenda = document.querySelector(`.alerta-${alvo}`)
     legenda.style.display = estilo;
 }
+let botaoSubmit = document.querySelector("#adicionar-paciente").disable = true;
 
 function validarAtendente(atendente, valor){
     if(!/(^[A-Za-z]{3,}$)/.test(valor) && valor.length>0){
@@ -14,10 +15,13 @@ function validarAtendente(atendente, valor){
 }
 
 function validarMatricula(matricula, valor) {
-    if(/^[0-9]{6}\-[0-9]$/.test(valor) || /[0-9]{7}/.test(valor) || valor.length==0){
+    if(/^[0-9]{6}\-[0-9]$/.test(valor) || valor.length==0){
         matricula.classList.remove("erro");
         criarLegenda("matricula","none");
-    }else{
+    }else if(/\d{7}/.test(valor)){
+       matricula.value = DadosConverter.paraMatricula(valor)
+    }
+    else{
         matricula.classList.add("erro");
         criarLegenda("matricula","block");
     }
@@ -45,17 +49,27 @@ function validarData(data,valor){
 
 
 function validarTelefone(telefone,valor) {
-    if (!/^\d{2}-\d{4}-\d{4}$/.test(valor) && valor.length>0){
+    if(/^\d{10}/.test(valor)){
+        telefone.value = DadosConverter.paraTel(valor)
+        telefone.classList.remove("erro");
+        criarLegenda("telefone","none");
+    }
+    else if (!/^\d{2}-\d{4}-\d{4}$/.test(valor) && valor.length>0){
         telefone.classList.add("erro");
         criarLegenda("telefone","block");
-    }else{
+    }else {
         telefone.classList.remove("erro");
         criarLegenda("telefone","none");
     }
 }
 
 function validarCelular(celular,valor) {
-    if (!/^\d{2}\-\d{5}\-\d{4}$/.test(valor) && valor.length>0){
+    if(/^\d{11}/.test(valor)){
+        celular.value = DadosConverter.paraCel(valor);
+        celular.classList.remove("erro");
+        criarLegenda("celular","none");
+    }
+    else if (!/^\d{2}\-\9\d{4}\-\d{4}$/.test(valor) && valor.length>0){
         celular.classList.add("erro");
         criarLegenda("celular","block");
     }else{

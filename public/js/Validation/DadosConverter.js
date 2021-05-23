@@ -23,26 +23,25 @@ class DadosConverter {
 
     static paraMatricula(matricula) {
         var resultado = matricula.split("");
-        if (/^\d{6}\-\d$/.test(matricula))
-            return matricula;
-        else if (/\d{7}/.test(matricula) && (resultado.length == 7)) {
+        if (resultado.length == 7) {
             resultado.splice(6, 0, "-");
             return resultado.toString().replace(/[,]/g, '');
-        } else
-            throw new Error("Deve ter formato 000000-0 ou 7 dígitos 0000000");
+        }
 
     }
 
     static paraTel(telefone) {
-        if (!/^\d{2}-\d{4}-\d{4}$/.test(telefone))
-            throw new Error('Deve estar no formato DD-0000-0000');
-
-        return telefone;
+        if(/^\d{10}/.test(telefone)){
+            var resultado = telefone.split("");
+            resultado.splice(2, 0, "-");
+            resultado.splice(7, 0, "-");
+            return resultado.toString().replace(/[,]/g, '');
+        }
     }
     static paraCel(celular) {
-        if (!/^\d{2}\-\d{5}\-\d{4}$/.test(celular))
-            throw new Error('Deve estar no formato DD-00000-0000');
-
-        return celular;
+        var resultado = celular.split("");
+        resultado.splice(2, 0, "-");
+        resultado.splice(8, 0, "-");
+        return resultado.toString().replace(/[,]/g, '');
     }
 }
