@@ -7,7 +7,7 @@ const criarPaciente = require('./models/criarPaciente')
 //config
     // template Engine
     app.engine('handlebars', handlebars({extname:'handlebars',defaultLayout:'index',
-    layoutsDir:__dirname+'/Views/'}))
+    layoutsDir:__dirname+'/Views/layouts/'}))
     app.set('view engine', 'handlebars')
     app.use(express.static(__dirname+'/public'))
 
@@ -19,7 +19,7 @@ const criarPaciente = require('./models/criarPaciente')
 
 //Rotas
 app.get('/', function(req, res){
-    res.render('index')
+    res.render('layouts/index')
 })
 
 app.post('/enviado', (req,res)=>{
