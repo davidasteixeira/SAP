@@ -1,4 +1,4 @@
-class PacienteController {
+/*class PacienteController {
     constructor(){
         let $ = document.querySelector.bind(document)
 
@@ -39,4 +39,4 @@ class PacienteController {
         this._inputCelular.value = '';
         this._inputObservacao.value= 'SEM AGENDA TESTE'
     }
-}
+}*/

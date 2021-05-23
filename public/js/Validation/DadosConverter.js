@@ -2,6 +2,8 @@ class DadosConverter {
     constructor() {
         throw new Error("Está classe não pode ser instanciada");
     }
+    
+    /*Não vao ser utlizados no momento
     static dataAtual() {
         let now = new Date();
         let mes = item => (item + 1) < 10 ? `0${item + 1}` : item + 1;
@@ -17,7 +19,7 @@ class DadosConverter {
 
             return novaData.toString().replace(/[,]/gi, '/');
         }
-    }
+    }*/
 
     static paraMatricula(matricula) {
         var resultado = matricula.split("");
