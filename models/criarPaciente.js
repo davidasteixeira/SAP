@@ -1,14 +1,14 @@
 const db = require('./db');
 
 const criarPaciente = db.sequelize.define('Pacientes', {
-    Atendente: {
+    Matricula: {
         type:db.Sequelize.STRING
     },
-    Matricula: {
+    Atendente: {
         type: db.Sequelize.STRING
     },
-    Nome:{
-        type:db.Sequelize.STRING
+    Nome: {
+        type: db.Sequelize.STRING
     },
     Nascimento:{
         type:db.Sequelize.STRING
