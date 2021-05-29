@@ -6,7 +6,7 @@ const criarPaciente = require('./models/criarPaciente')
 
 //config
     // template Engine
-    app.engine('handlebars', handlebars({extname:'handlebars',defaultLayout:'index',
+    app.engine('handlebars', handlebars({extname:'handlebars',defaultLayout:'main',
     layoutsDir:__dirname+'/Views/layouts/'}))
     app.set('view engine', 'handlebars')
     app.use(express.static(__dirname+'/public'))
@@ -15,12 +15,14 @@ const criarPaciente = require('./models/criarPaciente')
     app.use(bodyParser.urlencoded({extended:false}));
     app.use(bodyParser.json());
 
-//rotas
-
 //Rotas
 app.get('/', function(req, res){
-    res.render('layouts/index')
-})
+    res.render('layouts/main')
+});
+
+app.get('/pacientes', function(req,res){
+    res.render('pacientes')
+});
 
 app.post('/enviado', (req,res)=>{
     criarPaciente.create({
