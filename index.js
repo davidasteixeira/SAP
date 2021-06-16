@@ -16,11 +16,11 @@ const criarPaciente = require('./models/criarPaciente')
 
 //Rotas
 app.get('/', function(req, res){
-    res.render('layouts/main')
+    res.render('pages/inicio')
 });
 
 app.get('/pacientes', function(req,res){
-    res.render('pacientes')
+    res.render('pages/pacientes')
 });
 
 app.post('/enviado', (req,res)=>{

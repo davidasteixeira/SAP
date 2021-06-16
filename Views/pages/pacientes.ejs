@@ -2,12 +2,7 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8">
-	<title>SAP</title>
-	<link rel="icon" href="img/logo.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/root.css">
+	<%- include('../partials/head') %>
 	<link rel="stylesheet" type="text/css" href="css/paciente.css">
 	<link rel="stylesheet" type="text/css" href="css/tabela.css">
 
@@ -16,13 +11,7 @@
 <body>
 
 	<header class='cabecalho'>
-		<div class="conteudo-cabecalho">
-			<img class='logo' src="img/logo.png">
-		</div>
-		<nav id='menu-navegacao' class='menu-navegacao'>
-			<a class='link-navegacao' href="index.html">Incio</a>
-			<a class='link-navegacao' href="Pacientes.html">Pacientes</a>
-		</nav>
+		<%- include('../partials/header') %>
 	</header>
 	<section class="campo-busca">
 		<div class=formulario-cabecalho>
