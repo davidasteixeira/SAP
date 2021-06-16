@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express();
 const bodyParser = require('body-parser')
-const criarPaciente = require('./models/criarPaciente')
+const inicio = require('./routes/inicio');
+const pacientes = require('./routes/pacientes');
 
 //config
     // template Engine
@@ -15,30 +16,12 @@ const criarPaciente = require('./models/criarPaciente')
     app.use(bodyParser.json());
 
 //Rotas
-app.get('/', function(req, res){
-    res.render('pages/inicio')
-});
+    //Grupo pagina inicial
+    app.use('/', inicio);
 
-app.get('/pacientes', function(req,res){
-    res.render('pages/pacientes')
-});
+    //Grupo listagem pacientes
+    app.use('/pacientes', pacientes);
 
-app.post('/enviado', (req,res)=>{
-    criarPaciente.create({
-      Observacao: req.body.observacao,
-      Nome: req.body.nome,
-      Atendente: req.body.atendente,
-      Matricula: req.body.matricula,
-      Nascimento: req.body.nascimento,
-      Telefone: req.body.telefone,
-      Celular: req.body.celular,
-      Especialidade: req.body.especialidade
-    }).then(()=>{
-        res.redirect('/')
-    }).catch(erro=>{
-        res.send('Houve um erro: '+ erro)
-    })
-});
 
 
 
