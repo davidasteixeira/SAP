@@ -1,4 +1,6 @@
 const db = require('./db');
+const {DataTypes} = require('sequelize');
+const {Sequelize} = require('./db');
 
 const criarPaciente = db.sequelize.define('Pacientes', {
     Matricula: {
@@ -24,6 +26,10 @@ const criarPaciente = db.sequelize.define('Pacientes', {
     },
     Observacao:{
         type:db.Sequelize.TEXT
+    },
+    DataCriacao:{
+        type: DataTypes.DATEONLY,
+        defaultValue: new Date()
     }
 })
 
