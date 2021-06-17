@@ -29,7 +29,7 @@ const criarPaciente = db.sequelize.define('Pacientes', {
     },
     DataCriacao:{
         type: DataTypes.DATEONLY,
-        defaultValue: new Date()
+        defaultValue: Sequelize.NOW
     }
 })
 
