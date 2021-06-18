@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const criarPaciente = require('../models/criarPaciente');
+const Pacientes = require('../models/Pacientes');
 
 //pagina inicial 
 router.get('/', (req, res)=>{
@@ -8,7 +8,7 @@ router.get('/', (req, res)=>{
 })
 
 router.post('/enviado', (req,res)=>{
-    criarPaciente.create({
+    Pacientes.create({
         Matricula: req.body.matricula,
         Atendente: req.body.atendente,
         Nome: req.body.nome,

@@ -1,9 +1,15 @@
 const express = require('express');
+const Pacientes = require('../models/Pacientes');
 const router = express.Router();
 
 //pagina listagem de pacientes 
 router.get('/', (req, res)=>{
-    res.render('pages/pacientes');
+    Pacientes.findAll({}).then((pacientes)=>{
+        res.render('pages/pacientes', {pacientes:pacientes});
+    })
+    .catch((erro)=>{
+        console.log("Houve erro:"+ erro);
+    })
 })
 
 

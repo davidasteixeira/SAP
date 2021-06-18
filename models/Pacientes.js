@@ -2,7 +2,7 @@ const db = require('./db');
 const {DataTypes} = require('sequelize');
 const {Sequelize} = require('./db');
 
-const criarPaciente = db.sequelize.define('Pacientes', {
+const Pacientes = db.sequelize.define('Pacientes', {
     Status:{
         type: db.Sequelize.ENUM(['AGUARDANDO','FINALIZADO','SEM CONTATO','DELETADO']),
         defaultValue: "AGUARDANDO",
@@ -47,7 +47,7 @@ const criarPaciente = db.sequelize.define('Pacientes', {
     }
 })
 
-module.exports = criarPaciente;
+module.exports = Pacientes;
 
 //Comando ja executado para criação da tabela
-//criarPaciente.sync({force:true})
+//Pacientes.sync({force:true})
