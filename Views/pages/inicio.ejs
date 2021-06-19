@@ -53,7 +53,7 @@
 					ex: 21-4321-1234
 				</legend>
 				<div class="campo-checkbox">
-					<input id="check-telefone" type="checkbox">
+					<input id="check-telefone" type="checkbox" onclick="SemContato(this)">
 					<label class='label-checkbox' for="check-telefone">Não tem telefone</label>
 				</div>
 			</div>
@@ -66,8 +66,8 @@
 					ex: 21-98765-4321
 				</legend>
 				<div class="campo-checkbox">
-					<input id="check-celular" type="checkbox">
-					<label class='label-checkbox' for="check-telefone">Não tem celular</label>
+					<input id="check-celular" type="checkbox" onclick="SemContato(this)">
+					<label class='label-checkbox' for="check-celular">Não tem celular</label>
 				</div>
 			</div>
 			<div class="campos-form">
@@ -140,11 +140,8 @@
 		</div>
 	</section>
 
-	<script src="/js/Controller/Paciente.js"></script>
-	<script src="/js/Controller/Pacientes.js"></script>
+
 	<script src="/js/Validation/DadosConverter.js"></script>
-	<script src="/js/Controller/PacienteController.js"></script>
-	<script src="/js/app.js"></script>
 	<script src="/js/Validation/mascara.js"></script>
 	<script src="/js/Validation/Validacao.js"></script>
 

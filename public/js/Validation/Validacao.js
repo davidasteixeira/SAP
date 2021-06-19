@@ -1,69 +1,67 @@
-function criarLegenda(alvo,estilo){
+function criarLegenda(alvo, estilo) {
     let legenda = document.querySelector(`.alerta-${alvo}`)
     legenda.style.display = estilo;
 }
-function CancelarEnvio(){
+function CancelarEnvio() {
     const botao = document.querySelector("#adicionar-paciente");
-    botao.onclick = ()=>{
+    botao.onclick = () => {
         return false;
     }
     botao.classList.add("botao-desativado");
 }
-function AtivarEnvio(){
+function AtivarEnvio() {
     const botao = document.querySelector("#adicionar-paciente");
-    botao.onclick = ()=>{
+    botao.onclick = () => {
         return true;
     }
     botao.classList.remove("botao-desativado");
 }
 
-function validarAtendente(atendente, valor){
-    if(!/(^[A-Za-z]{3,}$)/.test(valor) && valor.length>0){
+function validarAtendente(atendente, valor) {
+    if (!/(^[A-Za-z]{3,}$)/.test(valor) && valor.length > 0) {
         atendente.classList.add("erro");
-        criarLegenda("atendente","block");
+        criarLegenda("atendente", "block");
         CancelarEnvio();
-    }else{
+    } else {
         atendente.classList.remove("erro");
-        criarLegenda("atendente","none");
+        criarLegenda("atendente", "none");
         AtivarEnvio();
     }
 }
 
 function validarMatricula(matricula, valor) {
-    if(/^[0-9]{6}\-[0-9]$/.test(valor) || valor.length==0){
+    if (/^[0-9]{6}\-[0-9]$/.test(valor) || valor.length == 0) {
         matricula.classList.remove("erro");
-        criarLegenda("matricula","none");
+        criarLegenda("matricula", "none");
         AtivarEnvio();
-    }else if(/\d{7}/.test(valor)){
-       matricula.value = DadosConverter.paraMatricula(valor)
+    } else if (/\d{7}/.test(valor)) {
+        matricula.value = DadosConverter.paraMatricula(valor)
     }
-    else{
+    else {
         matricula.classList.add("erro");
-        criarLegenda("matricula","block");
+        criarLegenda("matricula", "block");
         CancelarEnvio();
     }
 }
 
-function validarNome(nome, valor){
-    if(!/(^[A-Za-z]{1,}\s*)([A-Za-z]+\s?)*/.test(valor) && valor.length>0){
+function validarNome(nome, valor) {
+    if (!/(^[A-Za-z]{1,}\s*)([A-Za-z]+\s?)*/.test(valor) && valor.length > 0) {
         nome.classList.add("erro");
-        criarLegenda("nome","block");
+        criarLegenda("nome", "block");
         CancelarEnvio();
-    }else{
+    } else {
         nome.classList.remove("erro");
-        criarLegenda("nome","none");
+        criarLegenda("nome", "none");
         AtivarEnvio();
     }
 }
 
-function validarData(data,valor){
-    if(!/(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/(19|20)\d{2}/.test(valor) && valor.length>0){
+function validarData(data, valor) {
+    if (!/(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/(19|20)\d{2}/.test(valor) && valor.length > 0) {
         data.classList.add("erro");
-        criarLegenda("nascimento","block");
         CancelarEnvio();
-    }else{
         data.classList.remove("erro");
-        criarLegenda("nascimento","none");
+        criarLegenda("nascimento", "none");
         AtivarEnvio();
     }
 }
@@ -102,5 +100,43 @@ function validarCelular(celular,valor) {
         celular.classList.remove("erro");
         criarLegenda("celular","none");
         AtivarEnvio();
+    }
+}
+
+function SemContato(){
+
+    let telefone = document.querySelector('#telefone');
+    let celular = document.querySelector('#celular');
+    let checkCel = document.querySelector('#check-celular');
+    let checkTel = document.querySelector('#check-telefone');
+
+    if(checkTel.checked){
+        telefone.value = '';
+        telefone.classList.remove("erro");
+        criarLegenda("telefone","none");
+        AtivarEnvio();
+        telefone.disabled = true;
+        let caixa_checkbox = checkCel.parentNode;
+        caixa_checkbox.style.display = 'none'
+    }else if(checkCel.checked){
+        celular.value = '';
+        celular.classList.remove("erro");
+        criarLegenda("celular","none");
+        AtivarEnvio();
+        celular.disabled = true;
+        let caixa_checkbox = checkTel.parentNode;
+        caixa_checkbox.style.display = 'none';
+    }
+
+    if(!checkTel.checked){
+        telefone.removeAttribute('disabled');
+        let caixa_checkbox = checkCel.parentNode;
+        caixa_checkbox.style.display = 'flex'
+
+    }
+    if(!checkCel.checked){
+        celular.removeAttribute('disabled');
+        let caixa_checkbox = checkTel.parentNode;
+        caixa_checkbox.style.display = 'flex'
     }
 }
