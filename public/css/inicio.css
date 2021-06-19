@@ -35,6 +35,7 @@ label{
 	color: #000;
 	display: block;
 	margin-bottom: .2em;
+	font-family: "Releway", sans-serif;
 }
 
 .campo-situacao{
@@ -71,4 +72,20 @@ label{
 .botao-desativado{
 	background: lightgray;
 	border-bottom: none;
+}
+
+.campos-com-checkbox{
+	display: flex;
+	flex-direction: column;
+}
+
+.campo-checkbox{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	padding-top: .5rem;
+}
+
+.label-checkbox{
+	font-family: "Releway", sans-serif;
 }

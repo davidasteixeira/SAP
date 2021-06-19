@@ -46,21 +46,29 @@
 					ex: 05/05/2020
 				</legend>
 			</div>
-			<div class="campos-form">
+			<div class="campos-form campos-com-checkox">
 				<label for="telefone">Telefone:</label>
 				<input id="telefone" name="telefone" type="tel" placeholder="00-0000-0000" class="campo-pequeno" onblur="validarTelefone(this,this.value)" onkeyup="mascaraTelefone(this,this.value)">
 				<legend id="alerta-telefone" class="alerta-telefone legenda-erro">
 					ex: 21-4321-1234
 				</legend>
+				<div class="campo-checkbox">
+					<input id="check-telefone" type="checkbox">
+					<label class='label-checkbox' for="check-telefone">Não tem telefone</label>
+				</div>
 			</div>
 			</div>
-			<div class="campos-form">
+			<div class="campos-form campos-com-checkox">
 				<label for="celular">Celular:</label>
 				<input id="celular" name="celular" type="tel" placeholder="00-00000-0000" class="campo-pequeno" onblur="validarCelular(this,this.value)"
 				onkeyup="mascaraCelular(this,this.value)">
 				<legend id="alerta-celular" class="alerta-celular legenda-erro">
 					ex: 21-98765-4321
 				</legend>
+				<div class="campo-checkbox">
+					<input id="check-celular" type="checkbox">
+					<label class='label-checkbox' for="check-telefone">Não tem celular</label>
+				</div>
 			</div>
 			<div class="campos-form">
 				<label name="especialidade" for="especialidade">Especialidade:</label>
