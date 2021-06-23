@@ -81,4 +81,4 @@ const Pacientes = db.sequelize.define('Pacientes', {
 module.exports = Pacientes;
 
 //Comando ja executado para criação da tabela
-Pacientes.sync({force:true})
+Pacientes.sync({alter:true})
