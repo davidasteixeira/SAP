@@ -60,6 +60,7 @@ function validarData(data, valor) {
     if (!/(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/(19|20)\d{2}/.test(valor) && valor.length > 0) {
         data.classList.add("erro");
         CancelarEnvio();
+    }else{
         data.classList.remove("erro");
         criarLegenda("nascimento", "none");
         AtivarEnvio();
