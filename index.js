@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser')
 const inicio = require('./routes/inicio');
 const pacientes = require('./routes/pacientes');
+const login = require('./routes/login');
 
 //config
     // template Engine
@@ -21,6 +22,9 @@ const pacientes = require('./routes/pacientes');
 
     //Grupo listagem pacientes
     app.use('/pacientes', pacientes);
+
+    //Grupo pagina login
+    app.use('/login', login);
 
 
 
