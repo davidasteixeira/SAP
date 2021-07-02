@@ -3,7 +3,7 @@
     max-width: 330px;
     margin:auto;
     padding: .5rem;
-    margin-top: 6rem;
+    margin-top: 2rem;
 }
 
 .login{
@@ -19,4 +19,15 @@
 .btn-login:hover{
     background-color: black;
     border-color:black ;
+}
+
+.titulo-login{
+    width: 30%;
+    margin: auto;
+}
+
+.logo-sap{
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1rem;
 }
