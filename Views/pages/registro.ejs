@@ -13,16 +13,28 @@
     <div class="container container-titulo">
         <h1 class="cadastrar-usuario">Cadastrar Usuário</h1>
     </div>
-    <form class="container form-registro">
+    <form novalidate method="POST" action="registro/cadastrado" class="container form-registro needs-validation">
         <label class="mb-0" for="nome">Nome:</label>
-        <input class="mb-2" name="nome" required>
+        <input class="mb-2 form-control" name="nome" required>
+        <div class="invalid-feedback">
+            Por favor, informe um nome valido.
+        </div>
         <label class="mb-0" for="login">Login:</label>
-        <input class="mb-2" name="login" required>
+        <input class="mb-1 form-control" name="login" required>
+        <div class="invalid-feedback">
+            Por favor, informe um nome login.
+        </div>
         <label class="mb-0" for="Senha">Senha:</label>
-        <input class="mb-2" type="password" name="senha" required>
+        <input class="mb-1 form-control" type="password" name="senha" required>
+        <div class="invalid-feedback">
+            Por favor, informe um nome senha.
+        </div>
         <label class="mb-0" for="confirmeSenha">Confirme senha:</label>
-        <input class="mb-2" type="password" name="confirmeSenha" required>
-        <select class="mb-2 mt-2">
+        <input class="mb-1 form-control" type="password" name="confirmeSenha" required>
+        <div class="invalid-feedback">
+            Por favor, confirme a senha.
+        </div>
+        <select name="perfil" class="mb-2 mt-2 custom-select">
             <option>RECEPTIVO</option>
             <option>ATIVO</option>
             <option>ADMIN</option>
@@ -34,4 +46,5 @@
 
     
 </body>
+    <script src="js/Validation/validarRegistro.js"></script>
 </html>

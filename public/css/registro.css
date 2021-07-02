@@ -22,3 +22,8 @@
 .container-titulo{
     width: 50%;
 }
+
+.valid-feedback, .invalid-feedback{
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
