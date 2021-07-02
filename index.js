@@ -4,6 +4,9 @@ const bodyParser = require('body-parser')
 const inicio = require('./routes/inicio');
 const pacientes = require('./routes/pacientes');
 const login = require('./routes/login');
+const registro = require('./routes/registro');
+const session = require('express-session');
+const flash = require('connect-flash');
 
 //config
     // template Engine
@@ -11,6 +14,21 @@ const login = require('./routes/login');
 
     //Adicionando arquivos estáticos.. css.. js para rendereizar 
     app.use(express.static(__dirname+'/public'))
+
+    //Sessão
+    app.use(session({
+        secret: "cemeru@123",
+        resave: true,
+        saveUninitialized:true
+    }));
+    app.use(flash());
+
+//Midleware
+    app.use((req,res,next)=>{
+        res.locals.sucess_msg = req.flash("sucess_msg");
+        res.locals.error_msg = req.flash("error_msg");
+        next();
+    })
 
 //body-parser
     app.use(bodyParser.urlencoded({extended:false}));
@@ -26,6 +44,8 @@ const login = require('./routes/login');
     //Grupo pagina login
     app.use('/login', login);
 
+    //Grupo de registro de usuarios
+    app.use('/registro', registro);
 
 
 

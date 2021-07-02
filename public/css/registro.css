@@ -1,0 +1,24 @@
+.form-registro{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-top: 3rem;
+}
+
+.botao-registrar{
+    width: 100%;
+    margin: auto;
+}
+
+.cadastrar-usuario{
+    font-size: 2.5rem;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: .5em;
+    text-align: center;
+    font-family: "raleway", sans-serif;
+}
+
+.container-titulo{
+    width: 50%;
+}
