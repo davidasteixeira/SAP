@@ -17,6 +17,7 @@ na própria aplicação registrando as informações sobre o contato com o pacie
 ## Back end
 - Javascript
 - Nodejs
+- Mysql
 
 ## Front end
 - HTML / CSS / JS /
