@@ -18,9 +18,12 @@ router.post('/enviado', (req,res)=>{
         Especialidade: req.body.especialidade,
         Observacao: req.body.observacao
     }).then(()=>{
+        req.flash('sucess_msg','Paciente Cadastrado')
         res.redirect('/')
     }).catch(erro=>{
-        res.send('Houve um erro: '+ erro)
+        req.flash('error_msg','Houve um erro, entre em contato com o administrador');
+        console.log(erro)
+        res.redirect('/')
     })
 });
 

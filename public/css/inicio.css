@@ -45,16 +45,22 @@ label{
 	justify-content: center;
 }
 .campo-design{
-	width: 20%;
-	background: rgb(0, 0, 139,0.8);
-	border-radius: 0.5rem;
+	width:50%;
+	text-align: center;
+	border-radius: .4rem;
+	font-size: 1.5rem;
 }
 
-.alerta-mensagem{
-	font-size:2rem;
-	color: white;
-	text-transform: uppercase;
-	text-align: center;
+.alerta-sucesso{
+	color: #155724;
+  	border-color: #c3e6cb;
+	background-color: #d4edda;
+}
+
+.alerta-erro{
+	color: #721c24;
+  	background-color: #f8d7da;
+  	border-color: #f5c6cb;
 }
 
 .erro{
