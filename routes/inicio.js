@@ -21,7 +21,7 @@ router.post('/enviado', (req,res)=>{
         req.flash('sucess_msg','Paciente Cadastrado')
         res.redirect('/')
     }).catch(erro=>{
-        req.flash('error_msg','Houve um erro, entre em contato com o administrador');
+        req.flash('error_msg','Houve um erro, Tente novamente');
         console.log(erro)
         res.redirect('/')
     })

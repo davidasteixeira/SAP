@@ -74,3 +74,33 @@ body{
 	width: 12rem;
 
 }
+
+.campo-design-sucess{
+	width:auto;
+	text-align: center;
+	border-radius: .4rem;
+	border-color: #c3e6cb;
+	padding: .4rem;
+	background-color: #d4edda;
+}
+
+.campo-design-error{
+	width:auto;
+	text-align: center;
+	border-radius: .4rem;
+  	border-color: #f5c6cb;
+	padding: .4rem;
+	background-color: #f8d7da;
+}
+
+.alerta-sucesso{
+	color: #155724;
+	font-size: 1.5rem;
+	
+}
+
+.alerta-erro{
+	color: #721c24;
+	font-size: 1.5rem;
+	
+}
