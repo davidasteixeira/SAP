@@ -24,7 +24,7 @@ const Usuarios = db.sequelize.define('Usuarios',{
         allowNull: false,
         validate:{
             notEmpty:true,
-            len:[5,20]
+            len:[5,100]
         }
     },
     perfil:{

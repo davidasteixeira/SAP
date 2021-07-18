@@ -1,4 +1,5 @@
 const usuarios = require('../models/Usuarios');
+const bcrypt = require('bcrypt');
 
 
 
@@ -33,27 +34,38 @@ exports.cadastroUsuarios = (req,res)=>{
             }
         }).then((result)=>{
             if(result === null){
-                usuarios.create({
-                    nome: req.body.nome,
-                    login: req.body.login,
-                    senha: req.body.senha,
-                    perfil: req.body.perfil
+
+                bcrypt.genSalt(10, (erro,salt)=>{
+                    bcrypt.hash(req.body.senha, salt, (erro, hash)=>{
+                        if(erro){
+                            req.flash('error_msg', {texto:"Houve um erro para salvar os dados do usuário"});
+                            res.redirect('/registro');
+                        }
+
+                        usuarios.create({
+                            nome: req.body.nome,
+                            login: req.body.login,
+                            senha: hash,
+                            perfil: req.body.perfil
+                        })
+                        .then((usuario)=>{
+                            req.flash('sucess_msg', 'Cadastrado com sucesso');
+                            res.redirect('/registro');
+                        })
+                        .catch(error=>{
+                            req.flash('error_msg', {texto:"Houve um erro, tente novamente"});
+                            res.redirect('/registro');
+                            console.log('Erro:'+ error);
+                        });
+
+                    })
                 })
-                .then((usuario)=>{
-                    req.flash('sucess_msg', 'Cadastrado com sucesso');
-                    res.redirect('/registro');
-                })
-                .catch(error=>{
-                    req.flash('error_msg', "Houve um erro para cadastrar o usuário");
-                    res.redirect('/registro');
-                    console.log('Erro:'+ error);
-                });
             }else{
                 req.flash('info_msg', "Usuário já existe");
                 res.redirect('/registro')
             }
         }).catch((error)=>{
-            req.flash('error_msg', "Ocorreu um erro na busca do usuário");
+            req.flash('error_msg', {texto: "Ocorreu um erro na busca do usuário"});
             console.log(error)
             res.redirect('/registro')
         })
