@@ -45,6 +45,12 @@ body{
 	font-family: "Raleway",sans-serif;
 }
 
+.link-navegacao:hover{
+	text-decoration: none;
+	color: red;
+	cursor: pointer;
+}
+
 .conteudo-cabecalho{
 	display: flex;
 	justify-content: space-between;

@@ -27,6 +27,7 @@ const flash = require('connect-flash');
     app.use((req,res,next)=>{
         res.locals.sucess_msg = req.flash("sucess_msg");
         res.locals.error_msg = req.flash("error_msg");
+        res.locals.info_msg = req.flash("info_msg");
         next();
     })
 
