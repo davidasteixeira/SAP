@@ -1,12 +1,13 @@
 const express = require('express')
 const app = express();
-const bodyParser = require('body-parser')
 const inicio = require('./routes/inicio');
 const pacientes = require('./routes/pacientes');
 const login = require('./routes/login');
 const registro = require('./routes/registro');
 const session = require('express-session');
 const flash = require('connect-flash');
+const passport = require('passport');
+require('./config/auth')(passport);
 
 //config
     // template Engine
@@ -21,6 +22,8 @@ const flash = require('connect-flash');
         resave: true,
         saveUninitialized:true
     }));
+    app.use(passport.initialize());
+    app.use(passport.session());
     app.use(flash());
 
 //Midleware
@@ -28,12 +31,14 @@ const flash = require('connect-flash');
         res.locals.sucess_msg = req.flash("sucess_msg");
         res.locals.error_msg = req.flash("error_msg");
         res.locals.info_msg = req.flash("info_msg");
+        res.locals.error = req.flash("error");
+        res.locals.sucess = req.flash("sucess");
         next();
     })
 
 //body-parser
-    app.use(bodyParser.urlencoded({extended:false}));
-    app.use(bodyParser.json());
+    app.use(express.urlencoded({extended:false}));
+    app.use(express.json());
 
 //Rotas
     //Grupo pagina inicial

@@ -16,12 +16,15 @@
     <div>
       <h2 class="titulo-login titulo-form">Faça Login</h2>
     </div>
-    <form class="form-login">
+    <div class="mensagens-aviso">
+      <%- include('../partials/loginSituacao') %>
+    </div>
+    <form class="form-login" action="/login" method="POST">
       <img class="logo-sap" src="img/sap-logo.png" alt="">
       <label for="login" class="sr-only">Login</label>
-      <input id="login" class="form-control login" placeholder="Seu usuário" required="" autofocus="" autocomplete="off">
+      <input id="login" name="login" class="form-control login" placeholder="Seu usuário" required="" autofocus="" autocomplete="off">
       <label for="senha" class="sr-only">Senha</label>
-      <input type="password" id="senha" class="form-control senha" placeholder="Senha" required="">
+      <input type="password" id="senha" name="senha" class="form-control senha" placeholder="Senha" required="">
       <button class="btn btn-lg btn-primary btn-block btn-login" type="submit">Login</button>
       <p class="mt-5 mb-3 text-muted">© 2021</p>
     </form>

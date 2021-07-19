@@ -110,3 +110,9 @@ body{
 	font-size: 1.5rem;
 	
 }
+
+.mensagens-aviso{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
