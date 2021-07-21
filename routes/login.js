@@ -1,21 +1,14 @@
 const express = require('express');
-const passport = require('passport');
 const router = express.Router();
+const loginController = require('../controller/login-controller');
 
 
 router.get('/', (req,res)=>{
-    res.render('pages/login');
+    res.render('pages/login',{
+        message: req.flash('sucess')
+    });
 })
 
-router.post('/', (req, res, next)=>{
-    passport.authenticate('local',{
-        successRedirect:'/',
-        failureRedirect: '/login',
-        failureMessage: true,
-        failureMessage: "Ocorreu um erro na autenticação",
-        successFlash: "Bem vindo ao SAP"
-    })(req,res,next);
-    
-})
+router.post("/", loginController.AutenticarUsuario);
 
 module.exports = router;

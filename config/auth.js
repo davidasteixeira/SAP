@@ -19,13 +19,14 @@ module.exports = function(passport){
             //Caso o usuario for verdadeiro, vai comparar a senha com bcrypt abaixo.
             bcrypt.compare(senha, usuario.senha, (error, correto)=>{
                 if(correto){
-                    console.log("Senhas conferem!");
                     done(null, usuario);
                 }else{
                     console.log("Senha incorreta");
-                    done(null,false, {message:"Senha incorreta"});
+                    done(null,false, {message: "Senha incorreta"});
                 }
             })
+        }).catch(error=>{
+            done(error)
         })
     }))
 
