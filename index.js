@@ -33,6 +33,7 @@ require('./config/auth')(passport);
         res.locals.info_msg = req.flash("info_msg");
         res.locals.error = req.flash("error");
         res.locals.sucess = req.flash("sucess");
+        res.locals.user = req.user || null;
         next();
     })
 

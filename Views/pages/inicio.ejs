@@ -20,8 +20,8 @@
 		<form action="/enviado" method="POST" id="form-adiciona" class="form-adiciona">
 			<div class="campos-form">
 				<label for="atendente">Atendente:</label>
-				<input id="atendente" name="atendente" type="text" placeholder="RRIBEIRO" minlength="3" maxlength="14"
-					class="campo-pequeno"  required onblur="validarAtendente(this,this.value)">
+				<input id="atendente" name="atendente" type="text" minlength="3" maxlength="14"
+					class="campo-pequeno"  required value="<%=user.login.toUpperCase()%>" readonly>
 				<legend id="alerta-atendente" class="alerta-atendente legenda-erro">ex:RRIBEIRO </legend>
 			</div>
 			<div class="campos-form">

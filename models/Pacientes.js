@@ -24,7 +24,6 @@ const Pacientes = db.sequelize.define('Pacientes', {
         type: db.Sequelize.STRING,
         allowNull:false,
         validate:{
-            isAlpha: true,
             notEmpty: true,
         }
     },

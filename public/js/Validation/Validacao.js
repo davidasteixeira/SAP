@@ -16,7 +16,7 @@ function AtivarEnvio() {
     }
     botao.classList.remove("botao-desativado");
 }
-
+/*Função não utilizada no momento, Buscando o atendente atraves do dados do login no banco
 function validarAtendente(atendente, valor) {
     if (!/(^[A-Za-z]{3,}$)/.test(valor) && valor.length > 0) {
         atendente.classList.add("erro");
@@ -27,7 +27,7 @@ function validarAtendente(atendente, valor) {
         criarLegenda("atendente", "none");
         AtivarEnvio();
     }
-}
+}*/
 
 function validarMatricula(matricula, valor) {
     if (/^[0-9]{6}\-[0-9]$/.test(valor) || valor.length == 0) {
