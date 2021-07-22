@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Pacientes = require('../models/Pacientes');
 const inicioController = require('../controller/inicio-controller');
+const {validarUsuario} = require('../helpers/validarUsuario');
 
 //pagina inicial 
-router.get('/', (req, res)=>{
+router.get('/', validarUsuario, (req, res)=>{
     res.render('pages/inicio')
 })
 
-router.post('/enviado', inicioController.cadastroPaciente);
+router.post('/enviado', validarUsuario, inicioController.cadastroPaciente);
 
 
 module.exports = router;

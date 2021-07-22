@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const registroController = require('../controller/registro-controller');
+const {validarAdmin} = require('../helpers/validarUsuario');
 
-router.get('/', (req,res)=>{
+
+router.get('/', validarAdmin, (req,res)=>{
     res.render('pages/registro');
 })
 
-router.post('/cadastrado', registroController.cadastroUsuarios); 
+router.post('/cadastrado', validarAdmin, registroController.cadastroUsuarios); 
 
 
 
