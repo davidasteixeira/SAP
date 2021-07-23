@@ -52,3 +52,20 @@
     margin: 0;
 }
 
+.organizador-busca{
+    margin: 1rem auto 1rem auto;
+
+}
+
+.tamanho-input{
+    width: 15rem;
+}
+
+.tamanho-input-maior{
+    width: 30rem;
+}
+
+.btn-busca-simples{
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}

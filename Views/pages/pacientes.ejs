@@ -3,9 +3,9 @@
 
 <head>
 	<%- include('../partials/head') %>
-	<link rel="stylesheet" type="text/css" href="css/paciente.css">
 	<link rel="stylesheet" type="text/css" href="css/tabela.css">
 	<link type="text/css" href="BootStrap/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/paciente.css">
 
 </head>
 
@@ -14,79 +14,9 @@
 	<header class='cabecalho'>
 		<%- include('../partials/header') %>
 	</header>
+	<h2 class="titulo-form titulo-paciente">Pacientes</h2>
 	<section class="campo-busca">
-		<div class=formulario-cabecalho>
-			<h2 class="titulo-form titulo-paciente">Pacientes</h2>
-		</div>
-		<p for="filtrar-tabela" class="filtrar-tabela">Filtre:</p>
-		<div class="caixa-localizacao">
-			<div class='campo-informacoes'>
-				<label for="filtro" class="titulo-campo-busca">Matricula:</label>
-				<input type="text" name="filtro" class="campo-localizacao" placeholder="000000-0">
-				<button id="buscar-pacientes" class="botao bto-principal botao-filtro">Buscar</button>
-			</div>
-			<div class='campo-informacoes'>
-				<label for="filtro" class="titulo-campo-busca">Data:</label>
-				<input type="text" name="filtro" class="campo-localizacao" placeholder="dd/mm/aaaa">
-				<button id="buscar-pacientes" class="botao bto-principal botao-filtro">Buscar</button>
-			</div>
-			<div class='campo-informacoes'>
-				<label for="especialidade" class="titulo-campo-busca">Especialidade:</label>
-				<select name="especialidade" id="especialidade" class="campo-localizacao campo-especialidade">
-					<option selected>Alergologia e Imunologia</option>
-					<option>Angiologia</option>
-					<option>Cardiologia</option>
-					<option>Cirurgia Cardiovascular</option>
-					<option>Cirurgia de Cabeça e Pescoço</option>
-					<option>Cirurgia Geral</option>
-					<option>Cirurgia Pediátrica</option>
-					<option>Cirurgia Plástica
-					<option>Cirurgia Torácica</option>
-					<option>Cirurgia Vascular</option>
-					<option>Clínica Médica</option>
-					<option>Dermatologia</option>
-					<option>Endocrinologia e Metabologia</option>
-					<option>Endoscopia</option>
-					<option>Gastroenterologia</option>
-					<option>Geriatria</option>
-					<option>Ginecologia e Obstetrícia</option>
-					<option>Hematologia e Hemoterapia</option>
-					<option>Homeopatia</option>
-					<option>Infectologia</option>
-					<option>Mastologia</option>
-					<option>Nefrologia</option>
-					<option>Neurologia</option>
-					<option>Nutrologia</option>
-					<option>Oftalmologia</option>
-					<option>Ortopedia e Traumatologia</option>
-					<option>Otorrinolaringologia</option>
-					<option>Patologia</option>
-					<option>Pediatria</option>
-					<option>Pneumologia</option>
-					<option>Psiquiatria</option>
-					<option>Radiologia e Diagnóstico por Imagem
-					<option>Reumatologia</option>
-					<option>Urologia</option>
-					<option>Densitometria Óssea</option>
-					<option>Ecocardiografia</option>
-					<option>Ecografia Vascular com Doppler</option>
-					<option>Endocrinologia Pediátrica</option>
-					<option>Endoscopia Digestiva</option>
-					<option>Gastroenterologia Pediátrica</option>
-					<option>Hepatologia</option>
-					<option>Infectologia Pediátrica</option>
-					<option>Mamografia</option>
-					<option>Nefrologia Pediátrica</option>
-					<option>Neurologia Pediátrica</option>
-					<option>Nutrologia Pediátrica</option>
-					<option>Pneumologia Pediátrica</option>
-					<option>Psicoterapia</option>
-					<option>Reumatologia Pediátrica</option>
-					<option>Ultrassonografia</option>
-				</select>
-				<button id="buscar-pacientes" class="botao bto-principal botao-filtro">Buscar</button>
-			</div>
-		</div>
+		<%- include('../partials/BuscarPacientes') %>
 	</section>
 	<table class='tabela-pacientes table-hover text-center'>
 		<thead class="cabecalho-tabela">
