@@ -1,71 +1,33 @@
+.titulo-paciente{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+
 .campo-busca{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.formulario-cabecalho{
-    width: 30%;
-    text-align: center;
-}
-.caixa-localizacao{
-    width: 70%;
-    display: flex;
-    justify-content: space-around;
-}
-.campo-informacoes{
-    display: flex;
-    align-items: center;
-    margin-right: 2rem;
+    justify-content: center;
 }
 
-.filtrar-tabela{
-    font-family:"raleway",sans-serif;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+.busca-simples{
+    margin-top: 1rem;
 }
-
-.titulo-campo-busca{
-    font-family:"raleway",sans-serif;
-    margin-right: .3rem;
-    font-size: 1rem;
-}
-
-.campo-localizacao:focus{
-    border:3px solid darkblue;
-}
-.campo-localizacao{
-    height: 2rem;
-    width: 8rem;
-    text-align: center;
-    font-size: 1rem;
-    border-radius: 5px 0  0 5px;
-}
-
-.campo-especialidade{
-    width: 12rem;
-}
-
-.botao-filtro{
-    height: 2rem;
-    width: 6rem;
-    border-radius: 0 5px 5px 0;
-    margin: 0;
-}
-
-.organizador-busca{
-    margin: 1rem auto 1rem auto;
-
-}
-
 .tamanho-input{
     width: 15rem;
+    margin: .5rem;
 }
 
 .tamanho-input-maior{
     width: 30rem;
+    margin: auto;
 }
 
-.btn-busca-simples{
-    border-top-right-radius: .5rem;
-    border-bottom-right-radius: .5rem;
+.btn{
+    background-color: darkblue;
+    color:white
+}
+
+.btn:hover{
+    background-color:black;
+    border-color:black;
 }
