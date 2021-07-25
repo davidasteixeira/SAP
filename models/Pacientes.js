@@ -32,7 +32,7 @@ const Pacientes = db.sequelize.define('Pacientes', {
         allowNull:false,
         validate:{
             notEmpty: true,
-            len: [,70]
+            len: [5,70]
         }
     },
     Nascimento:{
