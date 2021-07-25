@@ -34,21 +34,21 @@
 			</div>
 			<div class="campos-form campos-maiores">
 				<label for="nome">Nome Completo:</label>
-				<input id="nome" name="nome" type="text" placeholder="JOAO PEDRO SILVA" class="campo" required onblur="validarNome(this,this.value)">
+				<input id="nome" name="nome" type="text" placeholder="JOAO PEDRO SILVA" maxlength="70" class="campo" required onblur="validarNome(this,this.value)">
 				<legend id="alerta-nome" class="alerta-nome legenda-erro">
 					ex: EVERTON RIBEIRO DA SILVA
 				</legend>
 			</div>
 			<div class="campos-form">
 				<label for="nascimento">Data Nascimento:</label>
-				<input id="nascimento" name="nascimento" type="text" min="1910-01-01" class="campo-pequeno" required onblur="validarData(this, this.value)" onkeyup="mascaraData(this, this.value)" placeholder="00/00/0000">
+				<input id="nascimento" name="nascimento" type="text" min="1910-01-01" maxlength="10" class="campo-pequeno" required onblur="validarData(this, this.value)" onkeyup="mascaraData(this, this.value)" placeholder="00/00/0000">
 				<legend id="alerta-nascimento" class="alerta-nascimento legenda-erro">
 					ex: 05/05/2020
 				</legend>
 			</div>
 			<div class="campos-form campos-com-checkox">
 				<label for="telefone">Telefone:</label>
-				<input id="telefone" name="telefone" type="tel" placeholder="00-0000-0000" class="campo-pequeno" required onblur="validarTelefone(this,this.value)" onkeyup="mascaraTelefone(this,this.value)">
+				<input id="telefone" name="telefone" type="tel" placeholder="00-0000-0000" maxlength="12" class="campo-pequeno" required onblur="validarTelefone(this,this.value)" onkeyup="mascaraTelefone(this,this.value)">
 				<legend id="alerta-telefone" class="alerta-telefone legenda-erro">
 					ex: 21-4321-1234
 				</legend>
@@ -60,7 +60,7 @@
 			</div>
 			<div class="campos-form campos-com-checkox">
 				<label for="celular">Celular:</label>
-				<input id="celular" name="celular" type="tel" placeholder="00-00000-0000" class="campo-pequeno" required onblur="validarCelular(this,this.value)"
+				<input id="celular" name="celular" type="tel" placeholder="00-00000-0000" maxlength="13" class="campo-pequeno" required onblur="validarCelular(this,this.value)"
 				onkeyup="mascaraCelular(this,this.value)">
 				<legend id="alerta-celular" class="alerta-celular legenda-erro">
 					ex: 21-98765-4321
@@ -127,7 +127,7 @@
 			</div>
 			<div class="campos-form campos-maiores">
 				<label for="observacao">Observação:</label>
-				<input id="observacao" name="observacao" type="text"  required placeholder="SEM AGENDA"
+				<input id="observacao" name="observacao" type="text" maxlength="45" required placeholder="SEM AGENDA"
 					class="campo" value="SEM AGENDA">
 			</div>
 

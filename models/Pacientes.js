@@ -32,20 +32,23 @@ const Pacientes = db.sequelize.define('Pacientes', {
         allowNull:false,
         validate:{
             notEmpty: true,
+            len: [,70]
         }
     },
     Nascimento:{
         type:db.Sequelize.STRING,
         allowNull:false,
         validate:{
-            notEmpty: true
+            notEmpty: true,
+            len: [10,10]
         }
     },
     Telefone:{
         type:db.Sequelize.STRING,
         allowNull:true,
         validate:{
-            notEmpty: true
+            notEmpty: true,
+            len: [12,12]
         }
     },
     Celular:{
@@ -53,6 +56,7 @@ const Pacientes = db.sequelize.define('Pacientes', {
         allowNull:true,
         validate:{
             notEmpty: true,
+            len: [13,13]
         }
     },
     Especialidade:{
