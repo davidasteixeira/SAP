@@ -4,6 +4,7 @@ const inicio = require('./routes/inicio');
 const pacientes = require('./routes/pacientes');
 const login = require('./routes/login');
 const registro = require('./routes/registro');
+const logout = require('./routes/logout');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
@@ -53,6 +54,9 @@ require('./config/auth')(passport);
 
     //Grupo de registro de usuarios
     app.use('/registro', registro);
+
+    //Grupo de logout/sair do usuario
+    app.use('/logout', logout )
 
 
 

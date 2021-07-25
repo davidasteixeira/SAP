@@ -13,6 +13,11 @@
 	flex-wrap: wrap;
 }
 
+.caixa-titulo-adicionarPac{
+	width: 40%;
+	text-align: center;
+}
+
 .campo-pequeno{
 	width: 11rem;
 	height: 2.5rem;
