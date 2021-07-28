@@ -1,41 +1,91 @@
-<div class="mb-3">
-    <div class="input-group mb-3 busca-simples">
-        <div class="input-group mb-3 tamanho-input">
-            <input type="text" class="form-control" placeholder="Matricula" aria-label="Example text with two button addons" aria-describedby="button-addon3">
-            <div class="input-group-prepend" id="button-addon3">
-              <button class="btn btn-buscaSimples " type="button">Buscar</button>
-            </div>
-        </div>
-        
-        <div class="input-group mb-3 tamanho-input">
-            <input type="date" class="form-control" placeholder="Data" aria-label="Example text with two button addons" aria-describedby="button-addon3">
-            <div class="input-group-prepend" id="button-addon3">
-              <button class="btn btn-buscaSimples" type="button">Buscar</button>
-            </div>
-        </div>
-    
-        <div class="input-group mb-3 tamanho-input">
-            <input type="text" class="form-control" placeholder="Status" aria-label="Example text with two button addons" aria-describedby="button-addon3">
-            <div class="input-group-prepend" id="button-addon3">
-              <button class="btn btn-buscaSimples" type="button">Buscar</button>
-            </div>
-        </div>
-    
-        <div class="input-group mb-3 busca-nome tamanho-input">
-            <input type="text" class="form-control" placeholder="Especialidade" aria-label="Example text with two button addons" aria-describedby="button-addon3">
-            <div class="input-group-prepend" id="button-addon3">
-              <button class="btn btn-buscaSimples " type="button">Buscar</button>
-            </div>
-        </div>
+<form method="POST" action="/pacientes">
+  <div class="form-row busca-simples">
+    <div class="col">
+      <label class="form-label" for="matricula">Matricula</label>
+      <input type="text" class="form-control" name="matricula" placeholder="MATRICULA"
+        onblur="validarMatricula(this, this.value)" onkeyup="mascaraMatricula(this, this.value)" maxlength="8">
     </div>
-
-    <div class="input-group mb-3 tamanho-input-maior ">
-        <input type="text" class="form-control" placeholder="Nome" aria-label="Example text with two button addons" aria-describedby="button-addon3">
-        <div class="input-group-prepend" id="button-addon3">
-          <button class="btn btn-buscaSimples" type="button">Buscar</button>
-        </div>
+    <div class="col">
+      <label class="form-label" for="data">Data</label>
+      <input type="date" name="data" class="form-control" placeholder="Data">
     </div>
-
-
-
-</div>
+    <div class="col">
+      <label class="form-label" for="status">Status</label>
+      <select type="text" name="status" class="form-control">
+        <option selected></option>
+        <option>AGUARDANDO</option>
+        <option>SEM CONTATO</option>
+        <option>FINALIZADO</option>
+        <option>FECHADO</option>
+      </select>
+    </div>
+    <div class="col">
+      <label class="form-label" for="especialidade">Especialidade</label>
+      <select type="text" name="especialidade" class="form-control">
+        <option selected></option>
+        <option>Alergologia e Imunologia</option>
+        <option>Angiologia</option>
+        <option>Cardiologia</option>
+        <option>Cirurgia Cardiovascular</option>
+        <option>Cirurgia de Cabeça e Pescoço</option>
+        <option>Cirurgia Geral</option>
+        <option>Cirurgia Pediátrica</option>
+        <option>Cirurgia Plástica
+        <option>Cirurgia Torácica</option>
+        <option>Cirurgia Vascular</option>
+        <option>Clínica Médica</option>
+        <option>Dermatologia</option>
+        <option>Endocrinologia e Metabologia</option>
+        <option>Endoscopia</option>
+        <option>Gastroenterologia</option>
+        <option>Geriatria</option>
+        <option>Ginecologia e Obstetrícia</option>
+        <option>Hematologia e Hemoterapia</option>
+        <option>Homeopatia</option>
+        <option>Infectologia</option>
+        <option>Mastologia</option>
+        <option>Nefrologia</option>
+        <option>Neurologia</option>
+        <option>Nutrologia</option>
+        <option>Oftalmologia</option>
+        <option>Ortopedia e Traumatologia</option>
+        <option>Otorrinolaringologia</option>
+        <option>Patologia</option>
+        <option>Pediatria</option>
+        <option>Pneumologia</option>
+        <option>Psiquiatria</option>
+        <option>Radiologia e Diagnóstico por Imagem
+        <option>Reumatologia</option>
+        <option>Urologia</option>
+        <option>Densitometria Óssea</option>
+        <option>Ecocardiografia</option>
+        <option>Ecografia Vascular com Doppler</option>
+        <option>Endocrinologia Pediátrica</option>
+        <option>Endoscopia Digestiva</option>
+        <option>Gastroenterologia Pediátrica</option>
+        <option>Hepatologia</option>
+        <option>Infectologia Pediátrica</option>
+        <option>Mamografia</option>
+        <option>Nefrologia Pediátrica</option>
+        <option>Neurologia Pediátrica</option>
+        <option>Nutrologia Pediátrica</option>
+        <option>Pneumologia Pediátrica</option>
+        <option>Psicoterapia</option>
+        <option>Reumatologia Pediátrica</option>
+        <option>Ultrassonografia</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row busca-nome">
+    <div class="col-6">
+      <label class="form-label" for="nome">Nome</label>
+      <input type="text" class="form-control" name="nome" placeholder="JOAO PEDRO SILVA"
+      onblur="validarNome(this,this.value)" maxlength="70">
+    </div>
+    <div class="col caixa-botao">
+      <button type="submit" class="btn btn-primary botao-pesquisar">Buscar</button>
+    </div>
+  </div>
+  
+  
+</form>

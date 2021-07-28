@@ -10,24 +10,27 @@
 }
 
 .busca-simples{
-    margin-top: 1rem;
-}
-.tamanho-input{
-    width: 15rem;
-    margin: .5rem;
+    margin: 1.2rem 1.2rem .6rem 1.2rem;
 }
 
-.tamanho-input-maior{
-    width: 30rem;
-    margin: auto;
+.busca-nome{
+    margin: 0 1.2rem 1.2rem 1.2rem;
 }
 
-.btn{
+.caixa-botao{
+    display: flex;
+    align-items: flex-end;
+}
+
+.botao-pesquisar{
+    height: 3rem;
+    width: 8rem;
     background-color: darkblue;
-    color:white
+    border-color: darkblue;
+    font-size: 1.2rem;
 }
 
-.btn:hover{
-    background-color:black;
-    border-color:black;
+.botao-pesquisar:hover{
+    background-color: darkblue;
+    border-color: darkblue;
 }
