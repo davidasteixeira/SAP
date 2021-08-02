@@ -5,14 +5,8 @@ const pacienteController = require('../controller/paciente-controller');
 const {validarUsuario} = require('../helpers/validarUsuario');
 const filterController = require("../controller/filter-controller");
 
-//pagina listagem de pacientes 
-router.get('/', (req, res, next)=>{
-    res.render('pages/pacientes', {pacientes: pacientes})
-})
+router.get('/', validarUsuario, pacienteController.getPacientes);
 
-
-router.get('/page:page', pacienteController.getPacientes);
-
-router.post('/', validarUsuario, filterController.filtrarPaciente)
+router.post('/filter', validarUsuario, filterController.filtrarPaciente)
 
 module.exports = router;
