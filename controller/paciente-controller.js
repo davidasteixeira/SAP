@@ -4,7 +4,7 @@ exports.getPacientes = (req, res)=>{
 
     const {page}  = req.query;
 
-    const limitPorPagina = Number.parseInt(20);
+    const limitPorPagina = Number.parseInt(5);
     const pageNumber = Number.parseInt(page);
     const ArrayIniciarMaisUm = Number.parseInt(1)
 
@@ -19,6 +19,7 @@ exports.getPacientes = (req, res)=>{
             offset: (pageNumber - ArrayIniciarMaisUm) * limitPorPagina
 
         }).then((pacientes)=>{
+            req.flash({'paginaAtual':page})
             res.render('pages/pacientes', {pacientes: pacientes});
         })
         .catch((erro)=>{

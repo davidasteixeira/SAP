@@ -1,0 +1,55 @@
+<nav>
+    <ul class="pagination">
+      <!--Validar o botao anterior, desativando ou ativando de acordo com número de páginas-->
+      <% var anterior = (paginaAtual-1)%>
+      <% if(paginaAtual>1){%>
+        <li class="page-item" id="anterior">
+          <span class="page-link"><a class="pagina-link"  href="/pacientes/?page=<%=anterior%>">Anterior</a></span>
+        </li>
+      <%}else{%>
+        <li class="page-item disabled">
+          <span class="page-link">Anterior</span>
+        </li>
+      <%}%>
+
+      <!--página anterior a página atual-->
+      <% var numeroAnterior = (paginaAtual-1)%>
+      <% if (paginaAtual>1) {%>
+        <li class="page-item" id="numero-anterior">
+          <span class="page-link">
+            <a class="pagina-link"  href="/pacientes/?page=<%=numeroAnterior%>"><%=numeroAnterior%></a>
+          </span>
+        </li>
+      <%}%>
+
+      <!--página atual da página-->
+      <li class="page-item active " id="pagina-atual">
+        <span class="page-link"><a class="pagina-link pagina-ativa" href="/pacientes/?page=<%=paginaAtual%>"><%=paginaAtual%></a></span>
+      </li>
+
+
+      <!--página posterior página-->
+      <% let deslocamentoPagina = Number.parseInt(5) %>
+      <% let numeroPosterior = Number.parseInt(paginaAtual) + 1 %>
+      <% let totalPaginas = Math.ceil(pacientes.count/deslocamentoPagina)%>
+      <% console.log("Total de páginas:",totalPaginas, "Total Pacientes:",pacientes.count) %>
+
+      <% if((paginaAtual=>1) && (numeroPosterior<=totalPaginas)){%>
+        <li class="page-item" id="numero-posterior">
+          <span class="page-link"><a class="pagina-link" href="/pacientes/?page=<%=numeroPosterior%>"><%=numeroPosterior%></a></span>
+        </li>
+      <%}%> 
+
+      <!--página posterior página-->
+      <% if(numeroPosterior<=totalPaginas){%>
+        <li class="page-item" id="proximo">
+          <span class="page-link"><a class="pagina-link" href="/pacientes/?page=<%=numeroPosterior%>">Próximo</a></span>
+        </li>
+      <%}else{%>
+        <li class="page-item disabled">
+          <span class="page-link">Próximo</span>
+        </li>
+      <%}%>
+
+    </ul>
+</nav>

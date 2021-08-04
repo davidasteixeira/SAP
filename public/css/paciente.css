@@ -34,3 +34,21 @@
     background-color: darkblue;
     border-color: darkblue;
 }
+
+.numero-paginas{
+    padding-right: 1.5rem ;
+    padding-left: 1.5rem ;
+    display: flex;
+    justify-content: flex-end;
+}
+.pagina-ativa{
+    color: white;
+    font-weight: 700;
+}
+.pagina-link{
+    font-weight: 700;
+}
+
+.pagina-link:hover{
+    text-decoration: none;
+}

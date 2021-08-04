@@ -35,6 +35,7 @@ require('./config/auth')(passport);
         res.locals.error = req.flash("error");
         res.locals.sucess = req.flash("sucess");
         res.locals.user = req.user || null;
+        res.locals.paginaAtual = req.query.page || null;
         next();
     })
 
