@@ -1,18 +1,28 @@
-<form method="POST" action="/pacientes/filter?page=1">
+<form method="GET" action="/pacientes/filter/page=1">
   <div class="form-row busca-simples">
     <div class="col">
       <label class="form-label" for="matricula">Matricula</label>
-      <input type="text" class="form-control" name="matricula" placeholder="MATRICULA"
-        onblur="validarMatricula(this, this.value)" onkeyup="mascaraMatricula(this, this.value)" maxlength="8">
+      <input type="text" class="form-control" id="matricula" name="matricula" placeholder="MATRICULA"
+        onblur="validarMatricula(this, this.value)" onkeyup="mascaraMatricula(this, this.value)" maxlength="8"
+        <% if(idPagina===2){%>
+          value="<%=filterMatricula%>"
+        <%}%>>
     </div>
     <div class="col">
       <label class="form-label" for="data">Data</label>
-      <input type="date" name="data" class="form-control" placeholder="Data">
+      <input type="date" name="data"id="data" class="form-control" placeholder="Data" 
+      <% if(idPagina===2){%>
+        value="<%=filterData%>"
+      <%}%>>
     </div>
     <div class="col">
       <label class="form-label" for="status">Status</label>
-      <select type="text" name="status" class="form-control">
-        <option selected></option>
+      <select type="text" name="status" id="status" class="form-control">
+        <% if(idPagina===2){%>
+          <option selected><%=filterStatus%></option>
+        <%}else{%>
+          <option selected></option>
+        <%}%>
         <option>AGUARDANDO</option>
         <option>SEM CONTATO</option>
         <option>FINALIZADO</option>
@@ -21,8 +31,12 @@
     </div>
     <div class="col">
       <label class="form-label" for="especialidade">Especialidade</label>
-      <select type="text" name="especialidade" class="form-control">
-        <option selected></option>
+      <select type="text" name="especialidade" id="especialidade" class="form-control">
+        <% if(idPagina===2){%>
+          <option selected><%=filterEspecialidade%></option>
+        <%}else{%>
+          <option selected></option>
+        <%}%>
         <option>Alergologia e Imunologia</option>
         <option>Angiologia</option>
         <option>Cardiologia</option>
@@ -79,8 +93,11 @@
   <div class="form-row busca-nome">
     <div class="col-6">
       <label class="form-label" for="nome">Nome</label>
-      <input type="text" class="form-control" name="nome" placeholder="JOAO PEDRO SILVA"
-      onblur="validarNome(this,this.value)" maxlength="70">
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="JOAO PEDRO SILVA"
+      onblur="validarNome(this,this.value)" maxlength="70"
+      <% if(idPagina===2){%>
+        value="<%=filterNome%>"
+      <%}%>>
     </div>
     <div class="col caixa-botao">
       <button type="submit" class="btn btn-primary botao-pesquisar">Buscar</button>

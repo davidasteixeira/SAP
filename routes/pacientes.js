@@ -7,6 +7,6 @@ const filterController = require("../controller/filter-controller");
 
 router.get('/', validarUsuario, pacienteController.getPacientes);
 
-router.post('/filter', validarUsuario, filterController.filtrarPaciente)
+router.get('/filter/page=:page', validarUsuario, filterController.filtrarPaciente)
 
 module.exports = router;

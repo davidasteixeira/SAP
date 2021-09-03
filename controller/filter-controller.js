@@ -2,42 +2,41 @@ const Pacientes = require('../models/Pacientes');
 const {Op} = require('sequelize'); 
 
 exports.filtrarPaciente = (req,res)=>{
+
+    const {matricula, data, status, especialidade, nome} = req.query;
   
-    let matricula = {matricula: req.body.matricula}
-    let data = {dataCriacao: req.body.data}
-    let status = {status: req.body.status}
-    let especialidade = {especialidade: req.body.especialidade}
-    let nome = {nome: req.body.nome}
+    let matriculaFilter = {matricula: matricula}
+    let dataFilter = {dataCriacao: data}
+    let statusFilter = {status: status}
+    let especialidadeFilter = {especialidade: especialidade}
 
     var dadosDeBusca = []
 
-    if(req.body.matricula !== '' && req.body.matricula.length>0 ){
-        dadosDeBusca.push(matricula)
+    if(matricula !== '' && matricula.length>0 ){
+        dadosDeBusca.push(matriculaFilter)
     }
 
-    if(req.body.data !== '' && req.body.data.length>0){
-        dadosDeBusca.push(data)
+    if(data !== '' && data.length>0){
+        dadosDeBusca.push(dataFilter)
     }
 
-    if(req.body.status !== '' && req.body.status.length>0){
-        dadosDeBusca.push(status)
+    if(status !== '' && status.length>0){
+        dadosDeBusca.push(statusFilter)
     }
 
-    if(req.body.especialidade !== '' && req.body.especialidade.length>0){
-        dadosDeBusca.push(especialidade)
+    if(especialidade !== '' && especialidade.length>0){
+        dadosDeBusca.push(especialidadeFilter)
     }
 
-    if(req.body.nome !== '' && req.body.nome.length>0){
-        dadosDeBusca.push({
-            [Op.or]: [ nome,
-            {nome:{[Op.regexp]: req.body.nome}}
-            ]
-        })
+    if(nome !== '' && nome.length>0){
+        dadosDeBusca.push(
+            {nome:{[Op.regexp]: nome}}
+        )
     }
 
-    const {page}  = req.query;
+    const {page}  = req.params;
 
-    const limitPorPagina = Number.parseInt(20);
+    const limitPorPagina = Number.parseInt(5);
     const pageNumber = Number.parseInt(page);
     const ArrayIniciarMaisUm = Number.parseInt(1)
 
@@ -50,12 +49,19 @@ exports.filtrarPaciente = (req,res)=>{
             offset: (pageNumber - ArrayIniciarMaisUm) * limitPorPagina,
             where: dadosDeBusca
         }).then((pacientes)=>{
-            res.render('pages/pacientes',{pacientes:pacientes});
+            //idPagina é para identificar que é página do filter que vai ser redenziarada e partials de paginação identificar.
+            res.render('pages/pacientes',{pacientes:pacientes, idPagina:2, paginaAtual: page,
+                filterMatricula: matricula,
+                filterData: data,
+                filterStatus: status,
+                filterEspecialidade: especialidade,
+                filterNome: nome
+            });
         })
         .catch((erro)=>{
-            res.json("Houve erro catch:"+ erro);
+            res.render('pages/pacientes', {error: 'Houve um erro, tente novamente'})
         })
     }else{
-        res.json({erro: "Houve um erro na validação do req.query"})
+        res.render('pages/pacientes', {error: 'Houve um erro, contate o administrador'})
     }
 }

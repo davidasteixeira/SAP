@@ -19,14 +19,14 @@ exports.getPacientes = (req, res)=>{
             offset: (pageNumber - ArrayIniciarMaisUm) * limitPorPagina
 
         }).then((pacientes)=>{
-            req.flash({'paginaAtual':page})
-            res.render('pages/pacientes', {pacientes: pacientes});
+            //idPagina é para identificar que é página de pacientes que vai ser redenziarada e partials de paginação identificar.
+            res.render('pages/pacientes', {pacientes: pacientes, idPagina: 1, paginaAtual:page});
         })
         .catch((erro)=>{
-            res.json({Catch: erro})
+            res.render('pages/pacientes', {error: 'Houve um erro, tente novamente'})
         })
     }else{
-        res.json({erro: "Houve um erro na validação do req.query"})
+        res.render('pages/pacientes', {error: 'Houve um erro, contate o administrador'})
     }
 
     
