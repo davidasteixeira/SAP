@@ -43,6 +43,13 @@ const Pacientes = db.sequelize.define('Pacientes', {
             len: [10,10]
         }
     },
+    Idade:{
+        type:db.Sequelize.INTEGER,
+        allowNull:false,
+        validate:{
+            notEmpty: true,
+        }
+    },
     Telefone:{
         type:db.Sequelize.STRING,
         allowNull:true,
