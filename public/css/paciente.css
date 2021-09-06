@@ -20,6 +20,9 @@
 .caixa-botao{
     display: flex;
     align-items: flex-end;
+    margin-right: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .botao-pesquisar{
@@ -51,4 +54,11 @@
 
 .pagina-link:hover{
     text-decoration: none;
+}
+
+.botao-limpar {
+    height: 3rem;
+    width: 8rem;
+    font-weight: 400;
+    font-size: 1.2rem;
 }

@@ -141,3 +141,20 @@ function SemContato(){
         caixa_checkbox.style.display = 'flex'
     }
 }
+
+
+function limparFormBusca(){
+
+    let matricula = document.querySelector('#matricula');
+    let data = document.querySelector('#data');
+    let status = document.querySelector('#status');
+    let especialidade = document.querySelector('#especialidade');
+    let nome = document.querySelector('#nome');
+
+    let inputsForm = [matricula, data, status, especialidade, nome];
+
+    inputsForm.forEach(input =>{
+        input.value = '';
+    })
+
+}
