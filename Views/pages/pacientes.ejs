@@ -24,7 +24,9 @@
 	<table class='tabela-pacientes table-hover text-center'>
 		<thead class="cabecalho-tabela">
 			<tr class="linha-cabecalho">
-				<th class="celula celula-pequena">Matrícula</th>
+				<th class="celula celula-pequena">Matrícula<br>
+					<input type="checkbox" class="checkAll" onclick="pacienteCheckbox()" id="checkAll">
+				</th>
 				<th class="celula celula-pequena">Data</th>
 				<th class="celula celula-grande">Nome</th>
 				<th class="celula celula-pequena">Data Nascimento</th>
@@ -40,6 +42,7 @@
 	<script src="/js/Validation/DadosConverter.js"></script>
 	<script src="/js/Validation/mascara.js"></script>
 	<script src="/js/Validation/Validacao.js"></script>
+	<script src="/js/checkboxs.js"></script>
 </body>
 
 </html>
