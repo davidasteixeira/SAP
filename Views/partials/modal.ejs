@@ -1,0 +1,42 @@
+<button class="btn btn-secondary btn-modificar"onclick="abrirModal()">Modificar</button>
+
+
+
+<div id="modalRegistro" class="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="TituloModalCentralizado">Registrar informações</h5>
+                <button type="button" onclick="fecharModal()" class="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <label for="atendente">Atendente:</label>
+                    <input class="form-control" name="atendente" value="<%=user.login.toUpperCase()%>" readonly>
+                </div>
+                <div>
+                    <label for="statusRegistro" class="mt-2">Status:</label>
+                    <select type="text" name="statusRegistro" class="form-control">
+                        <option>SEM CONTATO</option>
+                        <option>FINALIZADO</option>
+                        <option>FECHADO</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="matriculaRegistro">Matriculas:</label>
+                    <input class="form-control" name="matriculaRegistro" id="matriculaRegistro" readonly>
+                </div>
+                <div>
+                    <label for="informacaoRegistro" class="mt-1">Informação:</label>
+                    <textarea class="form-control" name="informacaoRegistro" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>

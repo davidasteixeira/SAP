@@ -68,3 +68,13 @@
     height: 1.5rem;
     width: 2rem;
 }
+
+.caixa-modal{
+    margin-left: 2rem;
+}
+
+.btn-modificar {
+    background-color: darkblue;
+    font-weight: 500;
+    border: 0;
+}
