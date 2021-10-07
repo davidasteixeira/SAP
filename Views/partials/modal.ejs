@@ -11,32 +11,34 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div>
-                    <label for="atendente">Atendente:</label>
-                    <input class="form-control" name="atendente" value="<%=user.login.toUpperCase()%>" readonly>
+            <form method="POST" id="formRegistro">
+                <div class="modal-body">
+                    <div>
+                        <label for="atendenteRegistro">Atendente:</label>
+                        <input class="form-control" name="atendenteRegistro" value="<%=user.login.toUpperCase()%>" readonly>
+                    </div>
+                    <div>
+                        <label for="statusRegistro" class="mt-2">Status:</label>
+                        <select type="text" name="statusRegistro" class="form-control">
+                            <option>SEM CONTATO</option>
+                            <option>FINALIZADO</option>
+                            <option>FECHADO</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="matriculaRegistro">Matriculas:</label>
+                        <input class="form-control" name="matriculaRegistro" id="matriculaRegistro" readonly>
+                    </div>
+                    <div>
+                        <label for="informacaoRegistro" class="mt-1">Informação:</label>
+                        <textarea class="form-control" name="informacaoRegistro" rows="3"></textarea>
+                    </div>
                 </div>
-                <div>
-                    <label for="statusRegistro" class="mt-2">Status:</label>
-                    <select type="text" name="statusRegistro" class="form-control">
-                        <option>SEM CONTATO</option>
-                        <option>FINALIZADO</option>
-                        <option>FECHADO</option>
-                    </select>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
+                    <button type="submit" id="botaoAtualizar"  class="btn btn-primary">Salvar</button>
                 </div>
-                <div>
-                    <label for="matriculaRegistro">Matriculas:</label>
-                    <input class="form-control" name="matriculaRegistro" id="matriculaRegistro" readonly>
-                </div>
-                <div>
-                    <label for="informacaoRegistro" class="mt-1">Informação:</label>
-                    <textarea class="form-control" name="informacaoRegistro" rows="3"></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
-                <button type="button" class="btn btn-primary">Salvar</button>
-            </div>
+            </form>
         </div>
     </div>
 </div>

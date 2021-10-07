@@ -36,9 +36,15 @@ function TratarPaciente(){
 const abrirModal = ()=>{
     let modal = document.querySelector('#modalRegistro');
     let matricula = document.querySelector('#matriculaRegistro');
+    let formularioRegistro = document.querySelector('#formRegistro');
 
     modal.style.display = 'block'
-    matricula.value = TratarPaciente().join();
+    let pacientesString = TratarPaciente().join();
+    matricula.value = pacientesString;
+
+    formularioRegistro.setAttribute("action", `/pacientes/update/${pacientesString}`);
+
+
 }
 
 const fecharModal = ()=>{
@@ -47,5 +53,4 @@ const fecharModal = ()=>{
 
     modal.style.display = 'none'
 
-    
 } 
