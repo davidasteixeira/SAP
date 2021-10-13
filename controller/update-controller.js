@@ -11,18 +11,17 @@ exports.atualizarDadosPaciente = (req, res)=>{
 
     matriculasArray.forEach(itemMatricula => {
         Pacientes.update({
-            Status: req.body.statusRegistro,
             AtendenteRegistro: req.body.atendenteRegistro,
+            Status: req.body.statusRegistro,
             informacaoRegistro: req.body.informacaoRegistro
         },{
             where:{
                 matricula : itemMatricula
             }
         }).then(result=>{
-            console.log("Paciente atualizado com sucesso, Resultado JSON:",result);
-            
+            console.log('Paciente atualizado:', result)
         }).catch(err=>{
-            console.log("Error para atualizar: ", err)
+            console.log("Error para atualizar paciente(s): ", err)
         })
     });
 
