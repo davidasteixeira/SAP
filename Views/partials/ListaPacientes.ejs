@@ -4,12 +4,16 @@
             <td class="td-conteudo"><%=paciente.Matricula%><br>
                 <input type="checkbox" class="checkboxRegistro" id="checkboxRegistro" value="<%=paciente.Matricula%>">
             </td>
-            <td class="td-conteudo"><%=paciente.DataCriacao%></td>
+            <td class="td-conteudo"><%=paciente.DataCriacao.split("-").reverse().join("/")%></td>
+            <td class="td-conteudo"><%=paciente.Atendente%></td>
+            <td class="td-conteudo"><%=paciente.Status%></td>
             <td class="td-conteudo"><%=paciente.Nome%></td>
             <td class="td-conteudo"><%=paciente.Nascimento%><br><%=paciente.Idade%> anos</td>
             <td class="td-conteudo"><%=paciente.Telefone%><br><%=paciente.Celular%></td>
             <td class="td-conteudo"><%=paciente.Especialidade%></td>
             <td class="td-conteudo"><%=paciente.Observacao%></td>
+            <td class="td-conteudo"><%=paciente.AtendenteRegistro%></td>
+            <td class="td-conteudo"><%=paciente.informacaoRegistro%></td>
         </tr>
     <%})%>
 <%}%>

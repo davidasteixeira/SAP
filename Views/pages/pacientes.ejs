@@ -24,24 +24,30 @@
 	<div class="caixa-modal">
 		<%- include('../partials/modal')%>
 	</div>
-	<table class='tabela-pacientes table-hover text-center'>
-		<thead class="cabecalho-tabela">
-			<tr class="linha-cabecalho">
-				<th class="celula celula-pequena">Matrícula<br>
-					<input type="checkbox" class="checkAll" onclick="pacienteCheckbox()" id="checkAll">
-				</th>
-				<th class="celula celula-pequena">Data</th>
-				<th class="celula celula-grande">Nome</th>
-				<th class="celula celula-pequena">Data Nascimento</th>
-				<th class="celula celula-pequena">Telefone<br>Celular</th>
-				<th class="celula celula-pequena">Especialidade</th>
-				<th class="celula celula-grande">Observação</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%- include ('../partials/ListaPacientes') %> 
-		</tbody>
-	</table>
+	<div class="table-responsive">
+		<table class='tabela-pacientes table table-hover text-center'>
+			<thead class="cabecalho-tabela">
+				<tr class="linha-cabecalho">
+					<th class="celula celula-pequena">Matrícula<br>
+						<input type="checkbox" class="checkAll" onclick="pacienteCheckbox()" id="checkAll">
+					</th>
+					<th class="celula celula-pequena">Data</th>
+					<th class="celula celula-media">Atendente</th>
+					<th class="celula celula-media">Status</th>
+					<th class="celula celula-grande">Nome</th>
+					<th class="celula celula-media">Data<br>Nascimento</th>
+					<th class="celula celula-media">Telefone<br>Celular</th>
+					<th class="celula celula-media">Especialidade</th>
+					<th class="celula celula-grande">Observação</th>
+					<th class="celula celula-media">Atendente<br>Registro</th>
+					<th class="celula celula-grande">Informação<br>Registro</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%- include ('../partials/ListaPacientes') %> 
+			</tbody>
+		</table>
+	</div>
 	<script src="/js/Validation/DadosConverter.js"></script>
 	<script src="/js/Validation/mascara.js"></script>
 	<script src="/js/Validation/Validacao.js"></script>
