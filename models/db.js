@@ -4,9 +4,14 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize('SAP', 'root', '030596D@vid', {
     host:"localhost",
     dialect: "mysql",
-    define: {
-        timestamps: false
-    }
+    dialectOptions:{
+        options:{
+            useUTC: false,
+            dateFirst:1
+    
+        }
+    },
+    timezone: '-03:00'
 })
 
 module.exports = {
