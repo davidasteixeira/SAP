@@ -4,7 +4,7 @@ const {Sequelize} = require('./db');
 
 const Pacientes = db.sequelize.define('Pacientes', {
     Status:{
-        type: db.Sequelize.ENUM(['AGUARDANDO','FINALIZADO','SEM CONTATO','FECHADO']),
+        type: db.Sequelize.ENUM(['AGUARDANDO','RESOLVIDO','FECHADO','DELETADO']),
         defaultValue: "AGUARDANDO",
         allowNull:false,
         validate:{
