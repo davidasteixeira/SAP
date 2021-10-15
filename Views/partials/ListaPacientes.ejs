@@ -4,7 +4,7 @@
             <td class="td-conteudo"><%=paciente.Matricula%><br>
                 <input type="checkbox" class="checkboxRegistro" id="checkboxRegistro" value="<%=paciente.Matricula%>">
             </td>
-            <td class="td-conteudo"><%=paciente.DataCriacao.split("-").reverse().join("/")%></td>
+            <td class="td-conteudo"><%=dataFormatada(paciente.createdAt)%><br><%=horaFormatada(paciente.createdAt)%></td>
             <td class="td-conteudo"><%=paciente.Atendente%></td>
             <td class="td-conteudo"><%=paciente.Status%></td>
             <td class="td-conteudo"><%=paciente.Nome%></td>
@@ -12,7 +12,16 @@
             <td class="td-conteudo"><%=paciente.Telefone%><br><%=paciente.Celular%></td>
             <td class="td-conteudo"><%=paciente.Especialidade%></td>
             <td class="td-conteudo"><%=paciente.Observacao%></td>
-            <td class="td-conteudo"><%=paciente.AtendenteRegistro%></td>
+            <% if(paciente.Status !== 'AGUARDANDO'){%>
+                <td class="td-conteudo"><%=paciente.AtendenteRegistro%></td>
+            <%}else{%>
+                <td class="td-conteudo"></td>
+            <%}%>
+            <% if(paciente.Status !== 'AGUARDANDO'){%>
+                <td class="td-conteudo"><%=dataFormatada(paciente.updatedAt)%><br><%=horaFormatada(paciente.updatedAt)%></td>
+            <%}else{%>
+                <td class="td-conteudo"></td>
+            <%}%>
             <td class="td-conteudo"><%=paciente.informacaoRegistro%></td>
         </tr>
     <%})%>

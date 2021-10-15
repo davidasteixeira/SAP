@@ -1,3 +1,5 @@
+const { application } = require("express");
+
 function criarLegenda(alvo, estilo) {
     let legenda = document.querySelector(`.alerta-${alvo}`)
     legenda.style.display = estilo;
@@ -158,3 +160,17 @@ function limparFormBusca(){
     })
 
 }
+
+function dataFormatada(data) {
+    let mes = item => (item + 1) < 10 ? `0${item + 1}` : item + 1;
+    let dataResult = [].concat(data.getDate(), mes(data.getMonth()), data.getFullYear());
+    return `${dataResult[0]}/${dataResult[1]}/${dataResult[2]}`
+}
+
+function horaFormatada(hora) {
+    let horaResult = [].concat(hora.getHours(), hora.getMinutes());
+    return `${horaResult[0]}:${horaResult[1]}`
+}
+
+
+module.exports = {dataFormatada, horaFormatada}

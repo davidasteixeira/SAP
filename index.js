@@ -9,6 +9,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 require('./config/auth')(passport);
+const {dataFormatada, horaFormatada} = require('./public/js/Validation/Validacao');
 
 //config
     // template Engine
@@ -38,6 +39,9 @@ require('./config/auth')(passport);
         res.locals.paginaAtual = req.query.page || null;
         next();
     })
+//Funções para utilizar na renderização
+    app.locals.dataFormatada = dataFormatada;
+    app.locals.horaFormatada = horaFormatada;
 
 //body-parser
     app.use(express.urlencoded({extended:false}));

@@ -78,14 +78,6 @@ const Pacientes = db.sequelize.define('Pacientes', {
             notEmpty: true
         }
     },
-    DataCriacao:{
-        type: DataTypes.DATEONLY,
-        defaultValue: Sequelize.NOW,
-        allowNull:false,
-        validate:{
-            notEmpty: true
-        }
-    },
     AtendenteRegistro:{
         type: db.Sequelize.STRING
     },
