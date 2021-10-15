@@ -13,10 +13,13 @@ exports.getPacientes = (req, res)=>{
 
         Pacientes.findAndCountAll({
             order: [
-                ['dataCriacao', 'DESC']
+                ['id', 'DESC']
             ],
             limit: limitPorPagina,
-            offset: (pageNumber - ArrayIniciarMaisUm) * limitPorPagina
+            offset: (pageNumber - ArrayIniciarMaisUm) * limitPorPagina,
+            where:{
+                Status:"AGUARDANDO"
+            }
 
         }).then((pacientes)=>{
             //idPagina é para identificar que é página de pacientes que vai ser redenziarada e partials de paginação identificar.

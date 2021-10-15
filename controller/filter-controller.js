@@ -42,12 +42,12 @@ exports.filtrarPaciente = (req,res)=>{
 
     if(!Number.isNaN(pageNumber) && pageNumber>0){
         Pacientes.findAndCountAll({
-            order: [
-                ['dataCriacao', 'DESC']
-            ],
             limit: limitPorPagina,
             offset: (pageNumber - ArrayIniciarMaisUm) * limitPorPagina,
-            where: dadosDeBusca
+            where: dadosDeBusca,
+            order: [
+                ['id', 'DESC']
+            ]
         }).then((pacientes)=>{
             //idPagina é para identificar que é página do filter que vai ser redenziarada e partials de paginação identificar.
             res.render('pages/pacientes',{pacientes:pacientes, idPagina:2, paginaAtual: page,
