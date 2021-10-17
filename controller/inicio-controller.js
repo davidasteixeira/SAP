@@ -26,22 +26,39 @@ exports.cadastroPaciente = (req,res)=>{
         
     }
 
-    Pacientes.create({
-        Matricula: req.body.matricula,
-        Atendente: req.body.atendente,
-        Nome: req.body.nome,
-        Nascimento: req.body.nascimento,
-        Idade:calcularIdade(req.body.nascimento),
-        Telefone: req.body.telefone,
-        Celular: req.body.celular,
-        Especialidade: req.body.especialidade,
-        Observacao: req.body.observacao
-    }).then(()=>{
-        req.flash('sucess_msg','Paciente Cadastrado')
-        res.redirect('/')
-    }).catch(erro=>{
-        req.flash('error_msg','Houve um erro, Tente novamente');
-        console.log(erro)
-        res.redirect('/')
+    Pacientes.findOne({
+        where:{
+            matricula: req.body.matricula,
+            status: "AGUARDANDO",
+            especialidade: req.body.especialidade
+        }
+    }).then(response =>{
+        if(response === null){
+            Pacientes.create({
+                Matricula: req.body.matricula,
+                Atendente: req.body.atendente,
+                Nome: req.body.nome,
+                Nascimento: req.body.nascimento,
+                Idade:calcularIdade(req.body.nascimento),
+                Telefone: req.body.telefone,
+                Celular: req.body.celular,
+                Especialidade: req.body.especialidade,
+                Observacao: req.body.observacao
+            }).then(()=>{
+                req.flash('sucess_msg','Paciente Cadastrado')
+                res.redirect('/')
+            }).catch(erro=>{
+                req.flash('error_msg','Houve um erro, Tente novamente');
+                console.log(erro)
+                res.redirect('/')
+            })
+
+        }else{
+            req.flash('info_msg',`Paciente já cadastrado`)
+            res.redirect('/')
+        }
+        
     })
+
+    
 }

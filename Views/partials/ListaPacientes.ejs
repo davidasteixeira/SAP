@@ -1,8 +1,8 @@
 <% if(pacientes.rows) { %>
     <% pacientes.rows.forEach( (paciente)=> {%>
         <tr class="tr-conteudo">
-            <td class="td-conteudo"><%=paciente.Matricula%><br>
-                <input type="checkbox" class="checkboxRegistro" id="checkboxRegistro" value="<%=paciente.Matricula%>">
+            <td class="td-conteudo"><span><%=paciente.Matricula%></span>
+                <input type="checkbox" class="checkboxRegistro" id="checkboxRegistro" value="<%=paciente.id%>">
             </td>
             <td class="td-conteudo"><%=dataFormatada(paciente.createdAt)%><br><%=horaFormatada(paciente.createdAt)%></td>
             <td class="td-conteudo"><%=paciente.Atendente%></td>

@@ -3,20 +3,20 @@ const Pacientes = require('../models/Pacientes');
 
 exports.atualizarDadosPaciente = (req, res)=>{
 
-    let {matricula} = req.params;
+    let {id} = req.params;
 
     
 
-    let matriculasArray = matricula.split(",");
+    let idArray = id.split(",");
 
-    matriculasArray.forEach(itemMatricula => {
+    idArray.forEach(itemId => {
         Pacientes.update({
             AtendenteRegistro: req.body.atendenteRegistro,
             Status: req.body.statusRegistro,
             informacaoRegistro: req.body.informacaoRegistro
         },{
             where:{
-                matricula : itemMatricula
+                id : itemId
             }
         }).then(result=>{
             console.log('Paciente atualizado:', result)

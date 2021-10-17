@@ -11,5 +11,5 @@ router.get('/', validarUsuario, pacienteController.getPacientes);
 router.get('/filter/page=:page', validarUsuario, filterController.filtrarPaciente)
 
 
-router.post('/update/:matricula', validarUsuario, updateContrller.atualizarDadosPaciente)
+router.post('/update/:id', validarUsuario, updateContrller.atualizarDadosPaciente)
 module.exports = router;

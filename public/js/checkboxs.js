@@ -37,7 +37,7 @@ const abrirModal = () => {
     let matricula = document.querySelector('#matriculaRegistro');
 
     modal.style.display = 'block'
-    let pacientesString = TratarPaciente().join();
+    let pacientesString = matriculasSelecionadas().join();
     matricula.value = pacientesString;
 
 }
@@ -91,4 +91,19 @@ const atualizarPaciente = () => {
     },500)
 
     atualizarPagina
+}
+
+function matriculasSelecionadas(){
+    let checkboxs = document.querySelectorAll('input[type="checkbox"]:not([id=checkAll])');
+
+    let matriculasArray = []
+    let verificarMatricula = checkbox => checkbox.previousElementSibling.textContent
+
+    checkboxs.forEach(item =>{
+        if(item.checked){
+            matriculasArray.push(verificarMatricula(item));
+        }
+    })
+
+    return matriculasArray;
 }

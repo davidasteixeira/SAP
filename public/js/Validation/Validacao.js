@@ -1,5 +1,3 @@
-const { application } = require("express");
-
 function criarLegenda(alvo, estilo) {
     let legenda = document.querySelector(`.alerta-${alvo}`)
     legenda.style.display = estilo;
