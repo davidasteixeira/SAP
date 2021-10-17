@@ -77,4 +77,25 @@
     background-color: darkblue;
     font-weight: 500;
     border: 0;
+    text-transform: uppercase;
+}
+.pagination{
+    margin-bottom: 0.1rem;
+}
+.caixa-resultado-busca{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: darkblue;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.2rem;
+}
+
+.total-paginas{
+    border-bottom: 1px white solid;
+}
+
+.table-responsive{
+    overflow-x: visible;
 }

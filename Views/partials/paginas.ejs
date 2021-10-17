@@ -27,7 +27,7 @@
         
 
       <!--página posterior página-->
-      <% let deslocamentoPagina = Number.parseInt(5) %>
+      <% let deslocamentoPagina = Number.parseInt(10) %>
       <% let numeroPosterior = Number.parseInt(paginaAtual) + 1 %>
       <% let totalPaginas = Math.ceil(pacientes.count/deslocamentoPagina)%>
       <% console.log("Total de páginas:",totalPaginas, "Total Pacientes:",pacientes.count) %>
@@ -47,4 +47,8 @@
       <%}%>
 
     </ul>
+    <div class="caixa-resultado-busca">
+      <span class="total-paginas"><%=totalPaginas%> Página(s)</span>
+      <span class="total-pacientes"><%=pacientes.count%> Paciente(s)</span>
+    </div>  
 </nav>

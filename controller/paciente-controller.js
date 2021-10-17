@@ -4,7 +4,7 @@ exports.getPacientes = (req, res)=>{
 
     const {page}  = req.query;
 
-    const limitPorPagina = Number.parseInt(5);
+    const limitPorPagina = Number.parseInt(10);
     const pageNumber = Number.parseInt(page);
     const ArrayIniciarMaisUm = Number.parseInt(1)
 
