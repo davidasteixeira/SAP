@@ -20,10 +20,14 @@
                     <div>
                         <label for="statusRegistro" class="mt-2">Status:</label>
                         <select type="text" name="statusRegistro" id="statusRegistro" class="form-control">
+                        <% if(user.perfil === "ATIVO" || user.perfil === "ADMIN"){%>
                             <option>AGUARDANDO</option>
                             <option>RESOLVIDO</option>
                             <option>FECHADO</option>
                             <option>DELETADO</option>
+                        <%}else{%>
+                            <option>DELETADO</option>
+                        <%}%>
                         </select>
                     </div>
                     <div>
