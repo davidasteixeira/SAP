@@ -8,7 +8,12 @@
             <td class="td-conteudo"><%=paciente.Atendente%></td>
             <td class="td-conteudo"><%=paciente.Status%></td>
             <td class="td-conteudo"><%=paciente.Nome%></td>
-            <td class="td-conteudo"><%=paciente.Nascimento%><br><%=paciente.Idade%> anos</td>
+            <td class="td-conteudo"><%=paciente.Nascimento%><br>
+                <% if(paciente.Idade>1){%>
+                    <%=paciente.Idade%> anos
+                <%}else{%>
+                    <%=paciente.Idade%> ano
+                <%}%></td>
             <td class="td-conteudo"><%=paciente.Telefone%><br><%=paciente.Celular%></td>
             <td class="td-conteudo"><%=paciente.Especialidade%></td>
             <td class="td-conteudo"><%=paciente.Observacao%></td>

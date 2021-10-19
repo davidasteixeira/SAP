@@ -176,7 +176,8 @@ function dataFormatada(data) {
 }
 
 function horaFormatada(hora) {
-    let horaResult = [].concat(hora.getHours(), hora.getMinutes());
+    let minutos = item => item < 10 ? `0${item}` : item;
+    let horaResult = [].concat(hora.getHours(), minutos(hora.getMinutes()));
     return `${horaResult[0]}:${horaResult[1]}`
 }
 
