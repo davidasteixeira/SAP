@@ -147,15 +147,25 @@ function limparFormBusca(){
 
     let matricula = document.querySelector('#matricula');
     let data = document.querySelector('#data');
-    let status = document.querySelector('#status');
-    let especialidade = document.querySelector('#especialidade');
     let nome = document.querySelector('#nome');
 
-    let inputsForm = [matricula, data, status, especialidade, nome];
+    let inputsForm = [matricula, data, nome];
 
     inputsForm.forEach(input =>{
         input.value = '';
     })
+
+    let optionStatusAguard = document.querySelector('#optionStatusAguard');
+    let optionStatusSelected = document.querySelector('#optionStatusSelected');
+    optionStatusSelected.selected = false;
+    optionStatusAguard.selected = true;
+
+    let statusEspecVazio = document.querySelector('#statusEspecVazio');
+    let statusEspecSelected = document.querySelector('#statusEspecSelected');
+
+    statusEspecSelected.selected = false;
+    statusEspecVazio.selected = true;
+
 
 }
 

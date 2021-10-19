@@ -19,11 +19,10 @@
       <label class="form-label" for="status">Status</label>
       <select type="text" name="status" id="status" class="form-control">
         <% if(idPagina===2){%>
-          <option selected><%=filterStatus%></option>
-        <%}else{%>
-          <option selected></option>
+          <option selected id="optionStatusSelected"><%=filterStatus%></option>
         <%}%>
-        <option>AGUARDANDO</option>
+        <option></option>
+        <option id='optionStatusAguard'>AGUARDANDO</option>
         <option>RESOLVIDO</option>
         <option>FECHADO</option>
         <option>DELETADO</option>
@@ -33,10 +32,9 @@
       <label class="form-label" for="especialidade">Especialidade</label>
       <select type="text" name="especialidade" id="especialidade" class="form-control">
         <% if(idPagina===2){%>
-          <option selected><%=filterEspecialidade%></option>
-        <%}else{%>
-          <option selected></option>
+          <option selected id="statusEspecSelected"><%=filterEspecialidade%></option>
         <%}%>
+        <option id="statusEspecVazio"></option>
         <option>Alergologia e Imunologia</option>
         <option>Angiologia</option>
         <option>Cardiologia</option>
