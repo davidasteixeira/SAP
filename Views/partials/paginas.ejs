@@ -30,7 +30,6 @@
       <% let deslocamentoPagina = Number.parseInt(10) %>
       <% let numeroPosterior = Number.parseInt(paginaAtual) + 1 %>
       <% let totalPaginas = Math.ceil(pacientes.count/deslocamentoPagina)%>
-      <% console.log("Total de páginas:",totalPaginas, "Total Pacientes:",pacientes.count) %>
 
       <% if(numeroPosterior<=totalPaginas){%>
         <li class="page-item" id="proximo">

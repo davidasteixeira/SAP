@@ -21,7 +21,6 @@ module.exports = function(passport){
                 if(correto){
                     done(null, usuario);
                 }else{
-                    console.log("Senha incorreta");
                     done(null,false, {message: "Senha incorreta"});
                 }
             })
@@ -31,7 +30,6 @@ module.exports = function(passport){
     }))
 
     passport.serializeUser((usuario, done)=>{
-        console.log("Id do usuário:", usuario.id);
         done(null, usuario.id)
     })
 

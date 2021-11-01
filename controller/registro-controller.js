@@ -20,6 +20,10 @@ exports.cadastroUsuarios = (req,res)=>{
         erros.push({texto: 'Senhas são diferentes, tente novamente.'})
     }
 
+    if(req.body.senha.length<4 || req.body.confirmeSenha.length<4){
+        erros.push({texto: 'Senha é curta, digite senha acima de 5 caracteres'})
+    }
+
     if(req.body.perfil === undefined || req.body.perfil === null ){
         erros.push({texto: 'Informe o tipo de perfil'})
     }
@@ -55,7 +59,6 @@ exports.cadastroUsuarios = (req,res)=>{
                         .catch(error=>{
                             req.flash('error_msg', {texto:"Houve um erro, tente novamente"});
                             res.redirect('/registro');
-                            console.log('Erro:'+ error);
                         });
 
                     })
@@ -66,7 +69,6 @@ exports.cadastroUsuarios = (req,res)=>{
             }
         }).catch((error)=>{
             req.flash('error_msg', {texto: "Ocorreu um erro na busca do usuário"});
-            console.log(error)
             res.redirect('/registro')
         })
 

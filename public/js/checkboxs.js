@@ -53,7 +53,7 @@ const fecharModal = () => {
 const dadosModalRegistro = () => {
     let atendente = document.querySelector('#atendenteRegistro').value
     let status = document.querySelector('#statusRegistro').value
-    let informacao = document.querySelector('#informacaoRegistro').value
+    let informacao = document.querySelector('#informacaoRegistro').value.toUpperCase()
 
 
     return {

@@ -37,19 +37,18 @@ exports.cadastroPaciente = (req,res)=>{
             Pacientes.create({
                 Matricula: req.body.matricula,
                 Atendente: req.body.atendente,
-                Nome: req.body.nome,
+                Nome: req.body.nome.toUpperCase(),
                 Nascimento: req.body.nascimento,
                 Idade:calcularIdade(req.body.nascimento),
                 Telefone: req.body.telefone,
                 Celular: req.body.celular,
                 Especialidade: req.body.especialidade,
-                Observacao: req.body.observacao
+                Observacao: req.body.observacao.toUpperCase()
             }).then(()=>{
                 req.flash('sucess_msg','Paciente Cadastrado')
                 res.redirect('/')
             }).catch(erro=>{
                 req.flash('error_msg','Houve um erro, Tente novamente');
-                console.log(erro)
                 res.redirect('/')
             })
 
