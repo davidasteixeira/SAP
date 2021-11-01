@@ -1,8 +1,9 @@
+require ( 'dotenv' ).config()
 const Sequelize = require('sequelize');
 
 // conexão com o banco de dados MySql
-const sequelize = new Sequelize('SAP', 'root', '030596D@vid', {
-    host:"localhost",
+const sequelize = new Sequelize(process.env.bd_dados, process.env.bd_user, process.env.bd_pass, {
+    host: process.env.db_host,
     dialect: "mysql",
     timezone: '-03:00'
 })

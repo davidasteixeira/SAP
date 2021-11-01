@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const app = express();
 const inicio = require('./routes/inicio');
@@ -65,6 +66,6 @@ const {dataFormatada, horaFormatada} = require('./public/js/Validation/Validacao
 
 
 
-app.listen(8081,function(){
-    console.log("Servidor rodando na porta 8081, http://localhost:8081");
+app.listen(process.env.server_port,function(){
+    console.log(`Servidor rodando na porta ${process.env.server_port}, http://${process.env.db_host}:${process.env.server_port}`);
 });
