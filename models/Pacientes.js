@@ -3,6 +3,14 @@ const {DataTypes} = require('sequelize');
 const {Sequelize} = require('./db');
 
 const Pacientes = db.sequelize.define('Pacientes', {
+    DataCriacao:{
+        type: DataTypes.DATEONLY,
+        defaultValue: Sequelize.NOW,
+        allowNull:false,
+        validate:{
+            notEmpty: true
+        }
+    },
     Status:{
         type: db.Sequelize.ENUM(['AGUARDANDO','RESOLVIDO','FECHADO','DELETADO']),
         defaultValue: "AGUARDANDO",

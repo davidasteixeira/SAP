@@ -34,7 +34,7 @@ function validarMatricula(matricula, valor) {
         matricula.classList.remove("erro");
         criarLegenda("matricula", "none");
         AtivarEnvio();
-    } else if (/\d{7}/.test(valor)) {
+    } else if (/\d{7}/.test(valor) || /\d{8}/.test(valor)) {
         matricula.value = DadosConverter.paraMatricula(valor)
     }
     else {
@@ -171,7 +171,8 @@ function limparFormBusca(){
 
 function dataFormatada(data) {
     let mes = item => (item + 1) < 10 ? `0${item + 1}` : item + 1;
-    let dataResult = [].concat(data.getDate(), mes(data.getMonth()), data.getFullYear());
+    let dia = item => item < 10 ? `0${item}` : item;
+    let dataResult = [].concat(dia(data.getDate()), mes(data.getMonth()), data.getFullYear());
     return `${dataResult[0]}/${dataResult[1]}/${dataResult[2]}`
 }
 

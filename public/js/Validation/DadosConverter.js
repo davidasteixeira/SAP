@@ -26,6 +26,10 @@ class DadosConverter {
         if (resultado.length == 7) {
             resultado.splice(6, 0, "-");
             return resultado.toString().replace(/[,]/g, '');
+        }else{
+            if(resultado.length == 8);
+            resultado.splice(6, 1, "-");
+            return resultado.toString().replace(/[,]/g, '');
         }
 
     }
