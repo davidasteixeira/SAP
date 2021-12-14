@@ -9,43 +9,50 @@ Cirurgia Plástica
 Cirurgia Torácica
 Cirurgia Vascular
 Clínica Médica
+Densitometria Óssea
 Dermatologia
+Ecocardiografia
+Ecografia Vascular com Doppler
 Endocrinologia e Metabologia
+Endocrinologia Pediátrica
 Endoscopia
+Endoscopia Digestiva
+Entrevista de Colono
+Fonoaudiólogo
 Gastroenterologia
+Gastroenterologia Pediátrica
 Geriatria
 Ginecologia e Obstetrícia
 Hematologia e Hemoterapia
+Hepatologia
+Holter
 Homeopatia
 Infectologia
+Infectologia Pediátrica
+Mamografia
+Mapa
 Mastologia
 Nefrologia
+Nefrologia Pediátrica
 Neurocirurgia
 Neurologia
+Neurologia Pediátrica
 Nutrologia
+Nutrologia Pediátrica
 Oftalmologia
 Ortopedia e Traumatologia
 Otorrinolaringologia
 Patologia
 Pediatria
+Pequena Cirurgia
 Pneumologia
+Pneumologia Pediátrica
+Proctologia
+Psicoterapia
 Psiquiatria
 Radiologia e Diagnóstico por Imagem
 Reumatologia
-Urologia
-Densitometria Óssea
-Ecocardiografia
-Ecografia Vascular com Doppler
-Endocrinologia Pediátrica
-Endoscopia Digestiva
-Gastroenterologia Pediátrica
-Hepatologia
-Infectologia Pediátrica
-Mamografia
-Nefrologia Pediátrica
-Neurologia Pediátrica
-Nutrologia Pediátrica
-Pneumologia Pediátrica
-Psicoterapia
 Reumatologia Pediátrica
+Tomografia
 Ultrassonografia
+Urologia

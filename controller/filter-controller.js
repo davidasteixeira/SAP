@@ -46,7 +46,7 @@ exports.filtrarPaciente = (req,res)=>{
             offset: (pageNumber - ArrayIniciarMaisUm) * limitPorPagina,
             where: dadosDeBusca,
             order: [
-                ['id', 'DESC']
+                ['id', 'ASC']
             ]
         }).then((pacientes)=>{
             //idPagina é para identificar que é página do filter que vai ser redenziarada e partials de paginação identificar.
