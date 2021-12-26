@@ -11,13 +11,16 @@ const flash = require('connect-flash');
 const passport = require('passport');
 require('./config/auth')(passport);
 const {dataFormatada, horaFormatada} = require('./public/js/Validation/Validacao');
-
+const path = require("path");
 //config
     // template Engine
     app.set('view engine', 'ejs')
 
     //Adicionando arquivos estáticos.. css.. js para rendereizar 
     app.use(express.static(__dirname+'/public'))
+
+    //Apontando a pasta Views, dessa forma no sistema Ubuntu o Nginx consegue buscar as páginas.
+    app.set("views", path.join(__dirname, "Views"));
 
     //Sessão
     app.use(session({
