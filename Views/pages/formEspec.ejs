@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<%- include('../partials/head');%>
+	<link type="text/css" href="/BootStrap/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<header class='cabecalho'>
+		<%- include('../partials/header') %>
+	</header>
+
+    <div class="d-flex justify-content-center mt-3">
+        <form class="w-25" method="GET" target="_blank" action="/relatorios/report-especialidades/view">
+            <div class="form-group">
+                <label for="pData">Data Inicial</label>
+                <input type="date" name='dataInicial' id='dataInicial' class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="sData">Data Final</label>
+                <input type="date" name='dataFinal' id='dataFinal' class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" name="status">
+                    <option selected>AGUARDANDO</option>
+                    <option>RESOLVIDO</option>
+                    <option>DELETADO</option>
+                    <option>FECHADO</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type='submit' class="btn btn-primary form-control">Visualizar</button>
+            </div>
+            
+        </form>
+        
+    </div>
+    <%- include('../partials/inicioSituacao')%>
+
+    <script src="/js/Validation/validarRelatorio.js"></script>
+
+    
+</body>
+    
+
+</html>

@@ -3,100 +3,102 @@
     <div class="col">
       <label class="form-label" for="matricula">Matricula</label>
       <input type="text" class="form-control" id="matricula" name="matricula" placeholder="MATRICULA"
-        onblur="validarMatricula(this, this.value)" onkeyup="mascaraMatricula(this, this.value)" maxlength="8"
-        <% if(idPagina===2){%>
-          value="<%=filterMatricula%>"
+        onblur="validarMatricula(this, this.value)" onkeyup="mascaraMatricula(this, this.value)" maxlength="8" <%
+        if(idPagina===2){%>
+      value="<%=filterMatricula%>"
         <%}%>>
     </div>
     <div class="col">
       <label class="form-label" for="data">Data</label>
-      <input type="date" name="data"id="data" class="form-control" placeholder="Data" 
-      <% if(idPagina===2){%>
-        value="<%=filterData%>"
-      <%}%>>
+      <input type="date" name="data" id="data" class="form-control" placeholder="Data" <% if(idPagina===2){%>
+      value="<%=filterData%>"
+        <%}%>>
     </div>
     <div class="col">
       <label class="form-label" for="status">Status</label>
       <select type="text" name="status" id="status" class="form-control">
         <% if(idPagina===2){%>
-          <option selected id="optionStatusSelected"><%=filterStatus%></option>
-        <%}%>
-        <option></option>
-        <option id='optionStatusAguard'>AGUARDANDO</option>
-        <option>RESOLVIDO</option>
-        <option>FECHADO</option>
-        <option>DELETADO</option>
+          <option selected id="optionStatusSelected">
+            <%=filterStatus%>
+          </option>
+          <%}%>
+            <option></option>
+            <option id='optionStatusAguard'>AGUARDANDO</option>
+            <option>RESOLVIDO</option>
+            <option>FECHADO</option>
+            <option>DELETADO</option>
       </select>
     </div>
     <div class="col">
       <label class="form-label" for="especialidade">Especialidade</label>
       <select type="text" name="especialidade" id="especialidade" class="form-control">
         <% if(idPagina===2){%>
-          <option selected id="statusEspecSelected"><%=filterEspecialidade%></option>
-        <%}%>
-        <option id="statusEspecVazio"></option>
-        <option>Alergologia e Imunologia</option>
-        <option>Angiologia</option>
-        <option>Bucomaxilo</option>
-        <option>Cardiologia</option>
-        <option>Cirurgia Cardiovascular</option>
-        <option>Cirurgia de Cabeça e Pescoço</option>
-        <option>Cirurgia Geral</option>
-        <option>Cirurgia Ginecológica</option>
-        <option>Cirurgia Pediátrica</option>
-        <option>Cirurgia Plástica
-        <option>Cirurgia Torácica</option>
-        <option>Cirurgia Vascular</option>
-        <option>Clínica Médica</option>
-        <option>Dermatologia</option>
-        <option>Endocrinologia e Metabologia</option>
-        <option>Endoscopia</option>
-        <option>Entrevista para Colonoscopia</option>
-        <option>Gastroenterologia</option>
-        <option>Geriatria</option>
-        <option>Ginecologia</option>
-        <option>Ginecologia Obstetrícia</option>
-        <option>Fonoaudiólogo</option>
-        <option>Hematologia e Hemoterapia</option>
-        <option>Holter</option>
-        <option>Homeopatia</option>
-        <option>Infectologia</option>
-        <option>Mastologia</option>
-        <option>Mapa</option>
-        <option>Nefrologia</option>
-        <option>Neurologia</option>
-        <option>Nutrologia</option>
-        <option>Oftalmologia - Consulta</option>
-        <option>Oftalmologia - Exame</option>
-        <option>Ortopedia e Traumatologia</option>
-        <option>Otorrinolaringologia</option>
-        <option>Patologia</option>
-        <option>Pediatria</option>
-        <option>Pequena Cirurgia - Consulta</option>
-        <option>Pequena Cirurgia - Procedimento</option>
-        <option>Pneumologia</option>
-        <option>Psiquiatria</option>
-        <option>Proctologia</option>
-        <option>Radiologia e Diagnóstico por Imagem
-        <option>Reumatologia</option>
-        <option>Urologia</option>
-        <option>Densitometria Óssea</option>
-        <option>Ecocardiografia</option>
-        <option>Ecografia Vascular com Doppler</option>
-        <option>Endocrinologia Pediátrica</option>
-        <option>Endoscopia Digestiva</option>
-        <option>Gastroenterologia Pediátrica</option>
-        <option>Hepatologia</option>
-        <option>Infectologia Pediátrica</option>
-        <option>Mamografia</option>
-        <option>Nefrologia Pediátrica</option>
-        <option>Neurologia Pediátrica</option>
-        <option>Nutrologia Pediátrica</option>
-        <option>Pneumologia Pediátrica</option>
-        <option>Psicoterapia</option>
-        <option>Reumatologia Pediátrica</option>
-        <option>Tomografia</option>
-        <option>Ultrassonografia</option>
+          <option selected id="statusEspecSelected">
+            <%=filterEspecialidade%>
+          </option>
+          <%}%>
+            <option id="statusEspecVazio"></option>
+            <option>Alergologia e Imunologia</option>
+            <option>Angiologia</option>
+            <option>Bucomaxilo</option>
+            <option>Cardiologia</option>
+            <option>Cirurgia Cardiovascular</option>
+            <option>Cirurgia de Cabeça e Pescoço</option>
+            <option>Cirurgia Geral</option>
+            <option>Cirurgia Ginecológica</option>
+            <option>Cirurgia Pediátrica</option>
+            <option>Cirurgia Plástica</option>
+            <option>Cirurgia Torácica</option>
+            <option>Cirurgia Vascular</option>
+            <option>Clínica Médica</option>
+            <option>Densitometria Óssea</option>
+            <option>Dermatologia</option>
+            <option>Ecocardiografia</option>
+            <option>Endocrinologia e Metabologia</option>
+            <option>Endocrinologia Pediátrica</option>
+            <option>Endoscopia</option>
+            <option>Entrevista para Colonoscopia</option>
+            <option>Fonoaudiólogo</option>
+            <option>Gastroenterologia</option>
+            <option>Gastroenterologia Pediátrica</option>
+            <option>Geriatria</option>
+            <option>Ginecologia</option>
+            <option>Ginecologia Obstetrícia</option>
+            <option>Hematologia e Hemoterapia</option>
+            <option>Hepatologia</option>
+            <option>Holter</option>
+            <option>Homeopatia</option>
+            <option>Infectologia</option>
+            <option>Infectologia Pediátrica</option>
+            <option>Mamografia</option>
+            <option>Mapa</option>
+            <option>Mastologia</option>
+            <option>Nefrologia</option>
+            <option>Nefrologia Pediátrica</option>
+            <option>Neurocirurgião</option>
+            <option>Neurologia</option>
+            <option>Neurologia Pediátrica</option>
+            <option>Nutrologia</option>
+            <option>Nutrologia Pediátrica</option>
+            <option>Oftalmologia - Consulta</option>
+            <option>Oftalmologia - Exame</option>
+            <option>Ortopedia e Traumatologia</option>
+            <option>Otorrinolaringologia</option>
+            <option>Patologia</option>
+            <option>Pediatria</option>
+            <option>Pequena Cirurgia - Consulta</option>
+            <option>Pequena Cirurgia - Procedimento</option>
+            <option>Pneumologia</option>
+            <option>Pneumologia Pediátrica</option>
+            <option>Proctologia</option>
+            <option>Psicoterapia</option>
+            <option>Psiquiatria</option>
+            <option>Radiologia e Diagnóstico por Imagem</option>
+            <option>Reumatologia</option>
+            <option>Reumatologia Pediátrica</option>
+            <option>Tomografia</option>
+            <option>Ultrassonografia</option>
+            <option>Urologia</option>
       </select>
     </div>
   </div>
@@ -104,10 +106,9 @@
     <div class="col-6">
       <label class="form-label" for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" name="nome" placeholder="JOAO PEDRO SILVA"
-      onblur="validarNome(this,this.value)" maxlength="70"
-      <% if(idPagina===2){%>
-        value="<%=filterNome%>"
-      <%}%>>
+        onblur="validarNome(this,this.value)" maxlength="70" <% if(idPagina===2){%>
+      value="<%=filterNome%>"
+        <%}%>>
     </div>
     <div class="caixa-botao">
       <button type="submit" class="btn btn-primary botao-pesquisar">Buscar</button>
@@ -116,6 +117,6 @@
       <button type="button" class="btn btn-primary btn-warning botao-limpar" onclick="limparFormBusca()">Limpar</button>
     </div>
   </div>
-  
-  
+
+
 </form>

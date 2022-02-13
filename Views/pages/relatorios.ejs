@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<%- include('../partials/head') %>
+	<link rel="stylesheet" type="text/css" href="/css/tabela.css">
+	<link type="text/css" href="/BootStrap/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/paciente.css">
+
+</head>
+
+<body>
+
+	<header class='cabecalho'>
+		<%- include('../partials/header') %>
+	</header>
+
+    <section class="container d-flex justify-content-center">
+        <div class="container d-flex flex-column w-100">
+            <div class="text-center container w-50">
+                <h2 class="titulo-form">Relatórios</h2>
+            </div>
+
+            <div class="container text-left w-50 p-3">
+
+                <div class="row d-flex justify-content-between mb-3 shadow-sm p-2 bg-white rounded">
+                <div class="col-sm-8">
+                    <span class="align-middle">Relatório de especialidades</span>
+                </div>
+                <div class="col-sm-2">
+                    <a href="/relatorios/report-especialidades" class="badge badge-primary w-100 p-2">Criar</a>
+                </div>
+                </div>
+        
+            </div>
+        </div>
+    </section>
+
+    
+
+</body>
+</html>

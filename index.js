@@ -6,6 +6,7 @@ const pacientes = require('./routes/pacientes');
 const login = require('./routes/login');
 const registro = require('./routes/registro');
 const logout = require('./routes/logout');
+const relatorios = require('./routes/relatorios');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
@@ -67,6 +68,8 @@ const path = require("path");
     //Grupo de logout/sair do usuario
     app.use('/logout', logout )
 
+    //Grupo de relatorios no banco
+    app.use('/relatorios', relatorios)
 
 
 app.listen(process.env.server_port,function(){

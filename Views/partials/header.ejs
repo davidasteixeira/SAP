@@ -7,5 +7,8 @@
     <% if(user.perfil === "ADMIN"){%>
         <a class='link-navegacao' href="/registro">Registro</a>
     <%}%>
+    <% if(user.perfil === "ADMIN" || user.perfil ==="ATIVO" ){%>
+        <a class='link-navegacao' href="/relatorios">Relatórios</a>
+    <%}%>
     <a class='link-navegacao' href="/logout">Sair</a>
 </nav>

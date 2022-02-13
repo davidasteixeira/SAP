@@ -13,6 +13,15 @@ module.exports = {
         req.flash('error_msg',"Perfil não autorizado a registrar usuário");
         res.redirect('/')
         
+    },
+    validarPerfil : (req,res, next)=>{
+        if(req.isAuthenticated() && (req.user.perfil ==="ATIVO" || req.user.perfil ==="ADMIN")){
+            return next();
+        }
+
+        req.flash('error_msg',"Perfil não autorizado");
+        res.redirect('/')
+
     }
 }
 
