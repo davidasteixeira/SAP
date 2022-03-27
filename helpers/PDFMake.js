@@ -55,7 +55,7 @@ function footerRelatorio(usuario){
     }
 }
 
-function contentRelatorioPorEspecialidade(dataInicial, dataFinal, Status, Dados){
+function contentRelatorioPorEspecialidade(dataInicial, dataFinal, Status, Dados, resultadoTotal){
     return [
         {
             image:'./public/img/sap-logo.png',
@@ -86,8 +86,9 @@ function contentRelatorioPorEspecialidade(dataInicial, dataFinal, Status, Dados)
             table: {
                 widths: [200, 100],
                 body: [
-                    [{text:'Especialidade',style:'tableHeaders'}, {text:'Total',style:'tableHeaders'}],
-                    ...Dados
+                    [{text:'Especialidade',style:'tableHeaders'}, {text:'Qtd',style:'tableHeaders'}],
+                    ...Dados,
+                    [{text:'Total',style:'tableHeaders'}, {text:`${resultadoTotal}`,style:'tableHeaders'}]
                 ]
             },
             style: 'table',

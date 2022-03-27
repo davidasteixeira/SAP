@@ -53,19 +53,21 @@ exports.especialidadesStatus = (req, res) => {
                             return (b.Total > a.Total) ? 1 : ((a.Total> b.Total)? -1:0)
                         });
 
-                        const printer = new PDFPrinter(fonts);
-
                         const arrayComValoresDaBusca = [];
+                        let somaTotal = 0;
 
                         dados.forEach(dado => {
                             let linhas = [];
+                            
                             linhas.push(dado.Especialidade);
                             linhas.push(dado.Total);
-
+                            somaTotal += dado.Total
                             arrayComValoresDaBusca.push(linhas);
                         })
 
-                        docDefinitions.content = contentRelatorioPorEspecialidade(dataInicial, dataFinal, status, arrayComValoresDaBusca)
+                        const printer = new PDFPrinter(fonts);
+
+                        docDefinitions.content = contentRelatorioPorEspecialidade(dataInicial, dataFinal, status, arrayComValoresDaBusca, somaTotal)
 
                         docDefinitions.footer = footerRelatorio(usuario.login)
 
