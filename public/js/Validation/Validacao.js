@@ -135,9 +135,10 @@ function limparFormBusca(){
 
     let matricula = document.querySelector('#matricula');
     let data = document.querySelector('#data');
+    let data2 = document.querySelector('#data2');
     let nome = document.querySelector('#nome');
 
-    let inputsForm = [matricula, data, nome];
+    let inputsForm = [matricula, data, data2, nome];
 
     inputsForm.forEach(input =>{
         input.value = '';

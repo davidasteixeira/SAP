@@ -77,7 +77,7 @@ const atualizarPaciente = () => {
     }
 
 
-    fetch(`http://localhost:8081/pacientes/update/${matricula}`, options)
+    fetch(`http://localhost:8086/pacientes/update/${matricula}`, options)
     .then(res => { res.json() })
     .then(response => {
         return response

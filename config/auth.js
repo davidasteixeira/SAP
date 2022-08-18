@@ -11,12 +11,12 @@ module.exports = function(passport){
             }
         }).
         then((usuario)=>{
-            //Se a conta não existir vai rodar o código abaixo!
+            
             if(!usuario){
                 done(null, false, {message:"Está conta não existe"})
             }
 
-            //Caso o usuario for verdadeiro, vai comparar a senha com bcrypt abaixo.
+            
             bcrypt.compare(senha, usuario.senha, (error, correto)=>{
                 if(correto){
                     done(null, usuario);

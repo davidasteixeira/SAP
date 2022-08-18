@@ -7,7 +7,7 @@
           <% if(idPagina === 1){%>
             <span class="page-link"><a class="pagina-link"  href="/pacientes/?page=<%=anterior%>">Anterior</a></span>
           <%}else{%>
-            <span class="page-link"><a class="pagina-link"  href="/pacientes/filter/page=<%=anterior%>?matricula=<%=filterMatricula%>&data=<%=filterData%>&status=<%=filterStatus%>&especialidade=<%=filterEspecialidade%>&nome=<%=filterNome%>">Anterior</a></span>
+            <span class="page-link"><a class="pagina-link"  href="/pacientes/filter/page=<%=anterior%>?matricula=<%=filterMatricula%>&data=<%=filterData%>&data2=<%=filterDataFinal%>&status=<%=filterStatus%>&especialidade=<%=filterEspecialidade%>&nome=<%=filterNome%>">Anterior</a></span>
           <%}%>
         </li>
       <%}else{%>
@@ -21,7 +21,7 @@
         <% if(idPagina === 1){%>
           <span class="page-link"><a class="pagina-link pagina-ativa" href="/pacientes/?page=<%=paginaAtual%>"><%=paginaAtual%></a></span>
         <%}else{%>
-          <span class="page-link"><a class="pagina-link pagina-ativa" href="/pacientes/filter/page=<%=paginaAtual%>?matricula=<%=filterMatricula%>&data=<%=filterData%>&status=<%=filterStatus%>&especialidade=<%=filterEspecialidade%>&nome=<%=filterNome%>"><%=paginaAtual%></a></span>
+          <span class="page-link"><a class="pagina-link pagina-ativa" href="/pacientes/filter/page=<%=paginaAtual%>?matricula=<%=filterMatricula%>&data=<%=filterData%>&data2=<%=filterDataFinal%>&status=<%=filterStatus%>&especialidade=<%=filterEspecialidade%>&nome=<%=filterNome%>"><%=paginaAtual%></a></span>
         <%}%>
       </li>
         
@@ -36,7 +36,7 @@
           <% if(idPagina ===1){%>
             <span class="page-link"><a class="pagina-link" href="/pacientes/?page=<%=numeroPosterior%>">Próximo</a></span>
           <%}else{%>
-            <span class="page-link"><a class="pagina-link"  href="/pacientes/filter/page=<%=numeroPosterior%>?matricula=<%=filterMatricula%>&data=<%=filterData%>&status=<%=filterStatus%>&especialidade=<%=filterEspecialidade%>&nome=<%=filterNome%>">Próximo</a></span>
+            <span class="page-link"><a class="pagina-link"  href="/pacientes/filter/page=<%=numeroPosterior%>?matricula=<%=filterMatricula%>&data=<%=filterData%>&data2=<%=filterDataFinal%>&status=<%=filterStatus%>&especialidade=<%=filterEspecialidade%>&nome=<%=filterNome%>">Próximo</a></span>
           <%}%>
         </li>
       <%}else{%>

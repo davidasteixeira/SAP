@@ -8,7 +8,6 @@ exports.cadastroPaciente = (req,res)=>{
         mesAtual = dataAtual.getMonth() + 1,
         diaAtual = dataAtual.getDate()
 
-        //transformando dataNascimento em Array ex: [03, 05, 1996] ordenado pelo dia, mes e ano
         let dataNas = dataNascimento.split(/\//).map(num=>{return parseInt(num)})
 
         let diaAniversario = dataNas[0]

@@ -9,9 +9,15 @@
         <%}%>>
     </div>
     <div class="col">
-      <label class="form-label" for="data">Data</label>
-      <input type="date" name="data" id="data" class="form-control" placeholder="Data" <% if(idPagina===2){%>
+      <label class="form-label" for="data">Data Inicial</label>
+      <input type="date" name="data" id="data" class="form-control" <% if(idPagina===2){%>
       value="<%=filterData%>"
+        <%}%>>
+    </div>
+    <div class="col">
+      <label class="form-label" for="data2">Data Final</label>
+      <input type="date" name="data2" id="data2" class="form-control" <% if(idPagina===2){%>
+      value="<%=filterDataFinal%>"
         <%}%>>
     </div>
     <div class="col">
@@ -38,67 +44,6 @@
           </option>
           <%}%>
             <option id="statusEspecVazio"></option>
-            <option>Alergologia e Imunologia</option>
-            <option>Angiologia</option>
-            <option>Bucomaxilo</option>
-            <option>Cardiologia</option>
-            <option>Cirurgia Cardiovascular</option>
-            <option>Cirurgia de Cabeça e Pescoço</option>
-            <option>Cirurgia Geral</option>
-            <option>Cirurgia Ginecológica</option>
-            <option>Cirurgia Pediátrica</option>
-            <option>Cirurgia Plástica</option>
-            <option>Cirurgia Torácica</option>
-            <option>Cirurgia Vascular</option>
-            <option>Clínica Médica</option>
-            <option>Densitometria Óssea</option>
-            <option>Dermatologia</option>
-            <option>Ecocardiografia</option>
-            <option>Endocrinologia e Metabologia</option>
-            <option>Endocrinologia Pediátrica</option>
-            <option>Endoscopia</option>
-            <option>Entrevista para Colonoscopia</option>
-            <option>Fonoaudiólogo</option>
-            <option>Gastroenterologia</option>
-            <option>Gastroenterologia Pediátrica</option>
-            <option>Geriatria</option>
-            <option>Ginecologia</option>
-            <option>Ginecologia Obstetrícia</option>
-            <option>Hematologia e Hemoterapia</option>
-            <option>Hepatologia</option>
-            <option>Holter</option>
-            <option>Homeopatia</option>
-            <option>Infectologia</option>
-            <option>Infectologia Pediátrica</option>
-            <option>Mamografia</option>
-            <option>Mapa</option>
-            <option>Mastologia</option>
-            <option>Nefrologia</option>
-            <option>Nefrologia Pediátrica</option>
-            <option>Neurocirurgião</option>
-            <option>Neurologia</option>
-            <option>Neurologia Pediátrica</option>
-            <option>Nutrologia</option>
-            <option>Nutrologia Pediátrica</option>
-            <option>Oftalmologia - Consulta</option>
-            <option>Oftalmologia - Exame</option>
-            <option>Ortopedia e Traumatologia</option>
-            <option>Otorrinolaringologia</option>
-            <option>Patologia</option>
-            <option>Pediatria</option>
-            <option>Pequena Cirurgia - Consulta</option>
-            <option>Pequena Cirurgia - Procedimento</option>
-            <option>Pneumologia</option>
-            <option>Pneumologia Pediátrica</option>
-            <option>Proctologia</option>
-            <option>Psicoterapia</option>
-            <option>Psiquiatria</option>
-            <option>Radiologia e Diagnóstico por Imagem</option>
-            <option>Reumatologia</option>
-            <option>Reumatologia Pediátrica</option>
-            <option>Tomografia</option>
-            <option>Ultrassonografia</option>
-            <option>Urologia</option>
       </select>
     </div>
   </div>

@@ -3,7 +3,7 @@ const {Op} = require('sequelize');
 
 exports.filtrarPaciente = (req,res)=>{
 
-    const {matricula, data, status, especialidade, nome} = req.query;
+    const {matricula, data, data2, status, especialidade, nome} = req.query;
   
     let matriculaFilter = {matricula: matricula}
     let dataFilter = {dataCriacao: data}
@@ -16,8 +16,14 @@ exports.filtrarPaciente = (req,res)=>{
         dadosDeBusca.push(matriculaFilter)
     }
 
-    if(data !== '' && data.length>0){
+    if((data !== '' && data.length>0)&&(data2 == '' && data2.length==0)){
         dadosDeBusca.push(dataFilter)
+    }
+
+    if((data !== '' && data.length>0)&&(data2 !== '' && data2.length>0)){
+        dadosDeBusca.push({
+            dataCriacao:{[Op.between]:[data,data2]}
+        })
     }
 
     if(status !== '' && status.length>0){
@@ -53,6 +59,7 @@ exports.filtrarPaciente = (req,res)=>{
             res.render('pages/pacientes',{pacientes:pacientes, idPagina:2, paginaAtual: page,
                 filterMatricula: matricula,
                 filterData: data,
+                filterDataFinal: data2,
                 filterStatus: status,
                 filterEspecialidade: especialidade,
                 filterNome: nome

@@ -18,10 +18,14 @@ na própria aplicação registrando as informações sobre o contato com o pacie
 - Javascript
 - Nodejs
 - Mysql
+- Express
 
 ## Front end
-- HTML / CSS / JS /
+- HTML
+- CSS
+- Javascript
 - BootStrap
+- EJS
 
 
 # Autor

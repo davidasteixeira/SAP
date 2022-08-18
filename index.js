@@ -13,6 +13,7 @@ const passport = require('passport');
 require('./config/auth')(passport);
 const {dataFormatada, horaFormatada} = require('./public/js/Validation/Validacao');
 const path = require("path");
+const cors = require('cors');
 //config
     // template Engine
     app.set('view engine', 'ejs')
@@ -25,7 +26,7 @@ const path = require("path");
 
     //Sessão
     app.use(session({
-        secret: "cemeru@123",
+        secret: `${process.env.secrect_session}`,
         resave: true,
         saveUninitialized:true
     }));
@@ -48,9 +49,10 @@ const path = require("path");
     app.locals.dataFormatada = dataFormatada;
     app.locals.horaFormatada = horaFormatada;
 
-//body-parser
+//Converter requisições
     app.use(express.urlencoded({extended:false}));
     app.use(express.json());
+    app.use(cors())
 
 //Rotas
     //Grupo pagina inicial
@@ -73,5 +75,5 @@ const path = require("path");
 
 
 app.listen(process.env.server_port,function(){
-    console.log(`Servidor rodando na porta ${process.env.server_port}, http://${process.env.db_host}:${process.env.server_port}`);
+    console.log(`Servidor rodando na porta ${process.env.server_port}, http://${process.env.bd_host}:${process.env.server_port}`);
 });
