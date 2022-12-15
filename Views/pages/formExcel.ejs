@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<%- include('../partials/head');%>
+	<link type="text/css" href="/BootStrap/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<header class='cabecalho'>
+		<%- include('../partials/header') %>
+	</header>
+
+    <div class="d-flex justify-content-center mt-3">
+        <form class="w-25" method="GET" target="_blank" action="/relatorios/report/download">
+            <div class="form-group">
+                <label for="dataInicial">Data Inicial</label>
+                <input type="date" name='dataInicial' id='dataInicial' class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="dataFinal">Data Final</label>
+                <input type="date" name='dataFinal' id='dataFinal' class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" name="status">
+                    <option selected value=''>--</option>
+                    <option>AGUARDANDO</option>
+                    <option>RESOLVIDO</option>
+                    <option>DELETADO</option>
+                    <option>FECHADO</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="especialidade">Especialidade</label>
+                <select class="form-control" name="especialidade">
+                    <option selected value=''>--</option>
+                    <option>Alergologia e Imunologia</option>
+					<option>Angiologia</option>
+					<option>Bucomaxilo</option>
+					<option>Cardiologia</option>
+					<option>Cirurgia Cardiovascular</option>
+					<option>Cirurgia de Cabeça e Pescoço</option>
+					<option>Cirurgia Geral</option>
+					<option>Cirurgia Ginecológica</option>
+					<option>Cirurgia Pediátrica</option>
+					<option>Cirurgia Plástica</option>
+					<option>Cirurgia Torácica</option>
+					<option>Cirurgia Vascular</option>
+					<option>Clínica Médica</option>
+					<option>Densitometria Óssea</option>
+					<option>Dermatologia</option>
+					<option>Ecocardiografia</option>
+					<option>Endocrinologia e Metabologia</option>
+					<option>Endocrinologia Pediátrica</option>
+					<option>Endoscopia</option>
+					<option>Entrevista para Colonoscopia</option>
+					<option>Fonoaudiólogo</option>
+					<option>Gastroenterologia</option>
+					<option>Gastroenterologia Pediátrica</option>
+					<option>Geriatria</option>
+					<option>Ginecologia</option>
+					<option>Ginecologia Obstetrícia</option>
+					<option>Hematologia e Hemoterapia</option>
+					<option>Hepatologia</option>
+					<option>Holter</option>
+					<option>Homeopatia</option>
+					<option>Infectologia</option>
+					<option>Infectologia Pediátrica</option>
+					<option>Mamografia</option>
+					<option>Mapa</option>
+					<option>Mastologia</option>
+					<option>Nefrologia</option>
+					<option>Nefrologia Pediátrica</option>
+					<option>Neurocirurgião</option>
+					<option>Neurologia</option>
+					<option>Neurologia Pediátrica</option>
+					<option>Nutrologia</option>
+					<option>Nutrologia Pediátrica</option>
+					<option>Oftalmologia - Consulta</option>
+					<option>Oftalmologia - Exame</option>
+					<option>Ortopedia e Traumatologia</option>
+					<option>Otorrinolaringologia</option>
+					<option>Patologia</option>
+					<option>Pediatria</option>
+					<option>Pequena Cirurgia - Consulta</option>
+					<option>Pequena Cirurgia - Procedimento</option>
+					<option>Pneumologia</option>
+					<option>Pneumologia Pediátrica</option>
+					<option>Proctologia</option>
+					<option>Psicoterapia</option>
+					<option>Psiquiatria</option>
+					<option>Radiologia e Diagnóstico por Imagem</option>
+					<option>Reumatologia</option>
+					<option>Reumatologia Pediátrica</option>
+					<option>Tomografia</option>
+					<option>Ultrassonografia</option>
+					<option>Urologia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type='submit' class="btn btn-primary form-control">Visualizar</button>
+            </div>
+            
+        </form>
+        
+    </div>
+    <%- include('../partials/inicioSituacao')%>
+
+    <script src="/js/Validation/validarRelatorio.js"></script>
+
+    
+</body>
+    
+
+</html>
