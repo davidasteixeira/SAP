@@ -16,11 +16,9 @@ router.get('/report-especialidades/view', validarPerfil, especialController.espe
 
 router.get('/report-situacao', validarPerfil, abaSituacaoController.situacao);
 
+router.get('/report-registros',validarPerfil, formRegistrosExcel.formRegExcel);
 
-
-router.get('/report-registros', formRegistrosExcel.formRegExcel);
-
-router.get('/report/download', controllerEspecialidadeStatusExcel.relatorioExcelEspecStatus);
+router.get('/report/download', validarPerfil, controllerEspecialidadeStatusExcel.relatorioExcelEspecStatus);
 
 
 module.exports = router;
