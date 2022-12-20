@@ -1,0 +1,41 @@
+<form method="GET" class="form-busca" action="/usuarios/filter/page=1">
+  <div class="form-row busca-simples">
+    <div class="col">
+      <label class="form-label" for="usuario">Usuario</label>
+      <input type="text" class="form-control" id="usuario" name="usuario" placeholder="JOAO.SILVA" maxlength="20" <%
+        if(idPagina===2){%>
+            value="<%=filterUsuario%>"
+        <%}%>>
+    </div>
+    <div class="col">
+      <label class="form-label" for="perfil">Perfil</label>
+      <select type="text" name="perfil" id="perfil" class="form-control">
+        <% if(idPagina===2){%>
+          <option selected id="optionStatusSelected">
+            <%=filterPerfil%>
+          </option>
+          <%}%>
+            <option></option>
+            <option id='optionStatusAguard'>RECEPTIVO</option>
+            <option>ATIVO</option>
+            <option>ADMIN</option>
+      </select>
+    </div>
+    <div class="col-6">
+      <label class="form-label" for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="JOAO PEDRO SILVA" maxlength="70" <% if(idPagina===2){%>
+        value="<%=filterNome%>"
+      <%}%>>
+    </div>
+  </div>
+  <div class="form-row caixa-botoes">
+    <div class="caixa-botao">
+      <button type="submit" class="btn btn-primary botao-pesquisar">Buscar</button>
+    </div>
+    <div class="caixa-botao">
+      <button class="btn btn-primary botao-pesquisar"><a class='' href="/registro">Criar Usuário</a></a></button>
+    </div>
+  </div>
+
+
+</form>

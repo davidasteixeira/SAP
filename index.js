@@ -7,6 +7,7 @@ const login = require('./routes/login');
 const registro = require('./routes/registro');
 const logout = require('./routes/logout');
 const relatorios = require('./routes/relatorios');
+const usuarios = require('./routes/usuarios');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
@@ -72,6 +73,9 @@ const cors = require('cors');
 
     //Grupo de relatorios no banco
     app.use('/relatorios', relatorios)
+
+    //Grupo de usuários
+    app.use('/usuarios', usuarios);
 
 
 app.listen(process.env.server_port,function(){

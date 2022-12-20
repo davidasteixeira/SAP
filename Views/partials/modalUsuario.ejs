@@ -1,0 +1,35 @@
+<div id="modalRegistro" class="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="TituloModalCentralizado">Deletar Usuário</h5>
+                <button type="button" onclick="fecharModal()" class="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form >
+                <div class="modal-body">
+                    <div>
+                        <label for="atendenteRegistro">Administador:</label>
+                        <input class="form-control" name="atendenteRegistro" id="atendenteRegistro" value="<%=user.login.toUpperCase()%>" readonly>
+                    </div>
+                    <div>
+                        <label for="usuarioSelecionado">Usuario selecionado:</label>
+                        <input class="form-control" name="usuarioSelecionado" id="usuarioSelecionado" readonly>
+                    </div>
+                    <div>
+                        <label for="codigoUsuario">Código do usuário(a):</label>
+                        <input class="form-control" name="codigoUsuario" id="codigoUsuario" readonly>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <p>Deseja excluir este usuário(a)?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="botaoAtualizar" onclick="deletarUsuario()" class="btn btn-danger">DELETAR</button>
+                    <button type="button" class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

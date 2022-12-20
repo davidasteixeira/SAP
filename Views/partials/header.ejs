@@ -4,11 +4,11 @@
 <nav id='menu-navegacao' class='menu-navegacao'>
     <a class='link-navegacao' href="/">Incio</a>
     <a class='link-navegacao' href="/pacientes/?page=1">Pacientes</a>
-    <% if(user.perfil === "ADMIN"){%>
-        <a class='link-navegacao' href="/registro">Registro</a>
-    <%}%>
     <% if(user.perfil === "ADMIN" || user.perfil ==="ATIVO" ){%>
         <a class='link-navegacao' href="/relatorios">Relatórios</a>
+    <%}%>
+    <% if(user.perfil === "ADMIN"){%>
+        <a class='link-navegacao' href="/usuarios/?page=1">Usuários</a>
     <%}%>
     <a class='link-navegacao' href="/logout">Sair</a>
 </nav>

@@ -1,0 +1,53 @@
+<nav>
+    <ul class="pagination">
+      <!--Validar o botao anterior, desativando ou ativando de acordo com número de páginas-->
+      <% var anterior = (paginaAtual-1)%>
+      <% if(paginaAtual>1){%>
+        <li class="page-item" id="anterior">
+          <% if(idPagina === 1){%>
+            <span class="page-link"><a class="pagina-link"  href="/usuarios/?page=<%=anterior%>">Anterior</a></span>
+          <%}else{%>
+            <span class="page-link"><a class="pagina-link"  href="/usuarios/filter/page=<%=anterior%>?usuario=<%=filterUsuario%>&perfil=<%=filterPerfil%>&nome=<%=filterNome%>">Anterior</a></span>
+          <%}%>
+        </li>
+      <%}else{%>
+        <li class="page-item disabled">
+          <span class="page-link">Anterior</span>
+        </li>
+      <%}%>
+
+      <!--numero atual da página-->
+      <li class="page-item active " id="pagina-atual">
+        <% if(idPagina === 1){%>
+          <span class="page-link"><a class="pagina-link pagina-ativa" href="/usuarios/?page=<%=paginaAtual%>"><%=paginaAtual%></a></span>
+        <%}else{%>
+          <span class="page-link"><a class="pagina-link pagina-ativa" href="/usuarios/filter/page=<%=paginaAtual%>?usuario=<%=filterUsuario%>&perfil=<%=filterPerfil%>&nome=<%=filterNome%>"><%=paginaAtual%></a></span>
+        <%}%>
+      </li>
+        
+
+      <!--página posterior página-->
+      <% let deslocamentoPagina = Number.parseInt(30) %>
+      <% let numeroPosterior = Number.parseInt(paginaAtual) + 1 %>
+      <% let totalPaginas = Math.ceil(usuarios.count/deslocamentoPagina)%>
+
+      <% if(numeroPosterior<=totalPaginas){%>
+        <li class="page-item" id="proximo">
+          <% if(idPagina ===1){%>
+            <span class="page-link"><a class="pagina-link" href="/usuarios/?page=<%=numeroPosterior%>">Próximo</a></span>
+          <%}else{%>
+            <span class="page-link"><a class="pagina-link"  href="/usuarios/filter/page=<%=numeroPosterior%>?usuario=<%=filterUsuario%>&perfil=<%=filterPerfil%>&nome=<%=filterNome%>">Próximo</a></span>
+          <%}%>
+        </li>
+      <%}else{%>
+        <li class="page-item disabled">
+          <span class="page-link">Próximo</span>
+        </li>
+      <%}%>
+
+    </ul>
+    <div class="caixa-resultado-busca">
+      <span class="total-paginas"><%=totalPaginas%> Página(s)</span>
+      <span class=""><%=usuarios.count%> Usuário(s)</span>
+    </div>  
+</nav>

@@ -1,0 +1,24 @@
+<% if(usuarios.rows) { %>
+    <% usuarios.rows.forEach( (usuario)=> {%>
+        <tr class="tr-conteudo">
+            <td class="td-conteudo"><%=usuario.id%></td>
+            <td class="td-conteudo"><%=usuario.nome.toUpperCase()%></td>
+            <td class="td-conteudo"><%=usuario.login.toUpperCase()%></td>
+            <td class="td-conteudo"><%=usuario.perfil.toUpperCase()%></td>
+            <td class="td-conteudo">
+                <ul class="lista-acoes">
+                    <li class="">
+                        <img src="/img/edit 24px.png">
+                        <p><a href="/usuarios/editar/<%=usuario.id%>">Editar</a></p>
+                    </li>
+                    <li class="">
+                        <img src="/img/delete 24px.png">
+                        <button type="button" id="button-modal" class="btn btn-link button-modal" onclick="abrirModal(this)">Deletar</button>
+                        <p class="d-none"  id="usuario-name"><%=usuario.login.toUpperCase()%></p>
+                        <p class="d-none"  id="usuario-id"><%=usuario.id%></p>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    <%})%>
+<%}%>

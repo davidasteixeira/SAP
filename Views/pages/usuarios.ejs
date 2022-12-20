@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<%- include('../partials/head') %>
+	<link rel="stylesheet" type="text/css" href="/css/tabela.css">
+	<link type="text/css" href="/BootStrap/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/usuario.css">
+
+</head>
+
+<body>
+
+	<header class='cabecalho'>
+		<%- include('../partials/header') %>
+	</header>
+	<h2 class="titulo-form titulo-usuario">Usuários</h2>
+	<section class="campo-busca">
+		<%- include('../partials/BuscarUsuario') %>
+	</section>
+	<div class="numero-paginas">
+		<%- include('../partials/paginasUsuarios')%>
+	</div>
+	<div class="caixa-modal">
+		<%- include('../partials/modalUsuario')%>
+	</div>
+	<div class="table-responsive">
+		<table class='tabela-usuarios table table-hover text-center'>
+			<thead class="cabecalho-tabela">
+				<tr class="linha-cabecalho">
+					<th class="celula celula-pequena">ID</th>
+					<th class="celula celula-media">Nome</th>
+					<th class="celula celula-pequena">Usuário</th>
+					<th class="celula celula-pequena">Perfil</th>
+					<th class="celula celula-pequena">Ação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%- include ('../partials/ListaUsuarios') %> 
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="numero-paginas">
+		<%- include('../partials/paginasUsuarios')%>
+	</div>
+
+	<script src="/js/ModalUsuarios.js"></script>
+</body>
+
+</html>

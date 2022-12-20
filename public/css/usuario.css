@@ -1,0 +1,115 @@
+.titulo-usuario{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+
+.form-busca{
+    width: 60%;
+}
+
+.campo-busca{
+    display: flex;
+    justify-content: center;
+}
+
+.busca-simples{
+    margin: 1.2rem 1.2rem .6rem 1.2rem;
+}
+
+
+.caixa-botao{
+    margin: .5rem;
+}
+
+.caixa-botoes {
+    justify-content: center;
+}
+
+.botao-pesquisar{
+    height: 3rem;
+    width: 8rem;
+    background-color: darkblue;
+    border-color: darkblue;
+    font-size: 1.1rem;
+}
+
+.botao-pesquisar:hover{
+    background-color: darkblue;
+    border-color: darkblue;
+}
+
+.botao-pesquisar a {
+    color: white;
+    text-decoration: none;
+}
+
+.numero-paginas{
+    padding-right: 1.5rem ;
+    padding-left: 1.5rem ;
+    display: flex;
+    justify-content: flex-end;
+}
+.pagina-ativa{
+    color: white;
+    font-weight: 700;
+}
+.pagina-link{
+    font-weight: 700;
+}
+
+.pagina-link:hover{
+    text-decoration: none;
+}
+
+.pagination{
+    margin-bottom: 0.1rem;
+}
+
+
+.total-paginas{
+    border-bottom: 1px white solid;
+}
+
+.table-responsive{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.caixa-resultado-busca{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: darkblue;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.2rem;
+}
+
+.tabela-usuarios{
+    width: 70%;
+    margin: auto;
+}
+
+.lista-acoes{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+
+.lista-acoes li p {
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.button-modal {
+    padding: 0;
+    font-size: .9rem;
+    color: red;
+    display: flex;
+    align-items: center;
+}
+
+.button-modal:hover{
+    color: red;
+}

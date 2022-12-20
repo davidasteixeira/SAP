@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../partials/head') %>
+    <link type="text/css" href="/BootStrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" href="/css/registro.css" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <%- include('../partials/header') %>
+    </header>
+
+    <div class="container container-titulo">
+        <h1 class="cadastrar-usuario">Editar Usuário</h1>
+    </div>
+    <div class="mensagens-aviso">
+        <%- include('../partials/registroSituacao')%>
+    </div>
+    <form novalidate method="POST" action="atualizar" class="container form-registro needs-validation">
+        <label class="mb-0" for="id" type="number">Código do usuário:</label>
+        <input class="mb-2 form-control" name="id" value=<%=id%> required readonly>
+        <label class="mb-0" for="usuario">Login:</label>
+        <input class="mb-1 form-control" type="text" name="usuario" autocomplete="off" maxlength="20" required value="<%=login.toUpperCase()%>" readonly>
+        <div class="invalid-feedback">
+            Por favor, informe o login.
+        </div>
+        <label class="mb-0" for="nome" type="text" maxlength="150" >Nome:</label>
+        <input class="mb-2 form-control" name="nome" autocomplete="off" required value="<%=nome.toUpperCase()%>">
+        <div class="invalid-feedback">
+            Por favor, informe um nome valido.
+        </div>
+        <label class="mb-0" for="Senha">Senha:</label>
+        <input class="mb-1 form-control" type="password" name="senha" autocomplete="off" maxlength="15" value="" required>
+        <div class="invalid-feedback">
+            Por favor, informe a senha.
+        </div>
+        <label class="mb-0" for="confirmaSenha">Confirme senha:</label>
+        <input class="mb-1 form-control" type="password" name="confirmaSenha" autocomplete="off" maxlength="15" value="" required>
+        <div class="invalid-feedback">
+            Por favor, confirme a senha.
+        </div>
+        <select name="perfil" type="text" class="mb-2 mt-2 custom-select">
+            <% if(perfil && perfil=='RECEPTIVO') {%>
+                <option selected><%=perfil%></option>
+                <option>ATIVO</option>
+                <option>ADMIN</option>
+            <%}else if (perfil && perfil=='ATIVO'){%>
+                <option selected><%=perfil%></option>
+                <option>RECEPTIVO</option>
+                <option>ADMIN</option>
+            <%} else if (perfil && perfil=='ADMIN'){%>
+                <option selected><%=perfil%></option>
+                <option>ATIVO</option>
+                <option>RECEPTIVO</option>
+            <%}else {%>
+                <option>ATIVO</option>
+                <option>RECEPTIVO</option>
+                <option>ADMIN</option>
+            <%}%>
+        </select>
+
+        <button class="btn botao botao-registrar mt-2" type="submit">Atualizar</button>
+    </form>
+
+
+    
+</body>
+    <script src="js/Validation/validarRegistro.js"></script>
+</html>
