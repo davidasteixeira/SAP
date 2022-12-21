@@ -21,7 +21,9 @@ async function generateNameXLSX(){
 }
 
 async function removeArchive(nome){
-    fs.rm(`${process.env.paste_save}${nome}.xlsx`, { force:true }, (err) => {
+    const arquivoParaDeletar = path.join(process.env.paste_save, `${nome}.xlsx`);
+
+    fs.rm(arquivoParaDeletar, { force:true }, (err) => {
         if(err){
             console.error(err.message, 'Erro ao localizar o arquivo.');
         }
